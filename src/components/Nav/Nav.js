@@ -8,10 +8,8 @@ import {
   NavLink,
   Button,
 } from "./Nav.styles";
-import { useState } from "react";
 
-function Nav() {
-  const [open, setOpen] = useState(false);
+function Nav({menu, isMenu}) {
   return (
     <NavContainer>
       <Navbar>
@@ -19,18 +17,18 @@ function Nav() {
         <Icon
           type="button"
           aria-label="toggle-menu"
-          open={open}
-          onClick={() => setOpen(!open)}
+          menu={menu}
+          onClick={() => isMenu(!menu)}
         />
-        <Wrapper open={open}>
-          <NavList open={open}>
+        <Wrapper menu={menu}>
+          <NavList menu={menu}>
             <NavLink href="#">We can help!</NavLink>
             <NavLink href="#">About</NavLink>
             <NavLink href="#">How to start</NavLink>
             <NavLink href="#">Projects</NavLink>
             <NavLink href="#">Contacts</NavLink>
           </NavList>
-          <Button open={open} type="button" aria-label="button">
+          <Button menu={menu} type="button" aria-label="button">
             Delegate a task
           </Button>
         </Wrapper>

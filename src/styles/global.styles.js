@@ -18,8 +18,13 @@ export default createGlobalStyle`
         -ms-text-size-adjust: 100%;
         -moz-text-size-adjust: 100%;
         text-rendering: optimizeLegibility;
-        /* background: black; */
-        padding-top: 150vh;
+         scrollbar-width: none;
+        -ms-overflow-style: none;
+        text-size-adjust: 100%;
+        -moz-transition: all 350ms ease-in-out;
+        -o-transition: all 350ms ease-in-out;
+        -webkit-transition: all 350ms ease-in-out;
+        transition: all 350ms ease-in-out;
     }
 
     ul {

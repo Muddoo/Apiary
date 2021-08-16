@@ -4,9 +4,11 @@ import { Container } from "../Container/Container.styles.js";
 export const NavContainer = styled(Container)`
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
   width: 100%;
   background-color: white;
+  transform: translateX(-50%);
+  z-index: 1;
 `;
 
 export const Navbar = styled.div`
@@ -18,6 +20,10 @@ export const Navbar = styled.div`
   flex-wrap: wrap;
   background-color: white;
   z-index: 1;
+
+  @media screen and (max-width: 868px) {
+    padding-top: 16px;
+  }
 `;
 
 export const Logo = styled.div`
@@ -34,13 +40,17 @@ export const Logo = styled.div`
     height: 25px;
     margin-top: 10px;
   }
+
+  @media screen and (max-width: 868px) {
+    margin: 0;
+  }
 `;
 
 export const Icon = styled.button`
   position: relative;
   width: 32px;
   align-self: stretch;
-  transform: ${(props) => props.open && "rotate(135deg)"};
+  transform: ${(props) => props.menu && "rotate(135deg)"};
   transition: all 0.4s;
   display: none;
   ::before {
@@ -63,10 +73,10 @@ export const Icon = styled.button`
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    top: ${(props) => (props.open ? "-2px" : "6px")};
+    top: ${(props) => (props.menu ? "-2px" : "6px")};
     width: 100%;
     height: 2px;
-    transform: ${(props) => props.open && "rotate(90deg)"};
+    transform: ${(props) => props.menu && "rotate(90deg)"};
     transform-origin: center;
     transition: all 0.4s;
   }
@@ -83,9 +93,9 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-height: ${(props) => (props.open ? "100%" : 0)};
+    max-height: ${(props) => (props.menu ? "100%" : 0)};
     overflow: hidden;
-    padding-bottom: ${(props) => (props.open ? "36px" : 0)};
+    padding-bottom: ${(props) => (props.menu ? "106px" : 0)};
     transition: padding 0.1s;
   }
 `;
@@ -103,16 +113,16 @@ export const NavList = styled.div`
 
   @media screen and (max-width: 868px) {
     width: 100%;
-    max-height: ${(props) => (props.open ? "100%" : 0)};
+    max-height: ${(props) => (props.menu ? "100%" : 0)};
     overflow: hidden;
     flex-direction: column;
-    padding-top: ${(props) => (props.open ? "75px" : 0)};
-    padding-bottom: ${(props) => (props.open ? "70px" : 0)};
-    transform: ${(props) => (props.open ? "scale(1)" : "scale(0)")};
-    transform-origin: top right;
+    padding-top: ${(props) => (props.menu ? "75px" : 0)};
+    padding-bottom: ${(props) => (props.menu ? "70px" : 0)};
+    transform: ${(props) => (props.menu ? "scale(1)" : "scale(0)")};
+    transform-origin: center;
     align-items: center;
     transition: ${(props) =>
-      props.open
+      props.menu
         ? "padding 0.2s, transform .5s"
         : "padding .2s, transform 0.15s, max-height 0.1s"};
   }
@@ -128,7 +138,7 @@ export const NavLink = styled.a`
   :hover {
     color: #000;
     transform: scale(1.09);
-    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black;
     filter: contrast(2);
   }
@@ -168,10 +178,13 @@ export const Button = styled.button`
     color: white;
     background-color: #ff9900;
     top: 0;
-    width: min(100%, 700px);
+    width: min(100%, 600px);
+    height: 70px;
+    font-size: 24px;
+    line-height: 32px;
     transform: ${(props) =>
-      props.open ? "translateY(0)" : "translateY(700%)"};
-    transition: ${(props) =>
-      props.open ? "transform .8s" : "transform 0s"};
+      props.menu ? "translateY(0)" : "translateY(700%)"};
+    transition: ${(props) => (props.menu ? "transform .8s" : "transform 0s")};
+    display: none;
   }
 `;

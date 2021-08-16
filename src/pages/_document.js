@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link
-            rel="stylesheet preload prefetch"
+            rel="stylesheet"
             as="style"
             type="text/css"
             href="/fonts/fonts.css"

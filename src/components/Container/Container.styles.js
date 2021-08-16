@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Container = styled.section`
   position: relative;
   padding: 0 min(5.6vw, 80px);
+  max-width: 1440px;
+  margin: auto;
 
   @media screen and (max-width: 1024px) {
     padding: 0 3.90625vw;
