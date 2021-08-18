@@ -16,11 +16,11 @@ function Hero({ menu }) {
         </Wrapper>
         <Img>
           <Image
-            src="/images/image.png"
+            src="/images/hero.png"
             alt="Hero Image"
             layout="fill"
             priority="true"
-            quality={1}
+            quality={25}
           />
         </Img>
       </Main>

@@ -77,9 +77,9 @@ export const Button = styled.button`
 
   @media screen and (max-width: 868px) {
     position: absolute;
-    bottom: 60px;
+    top: ${props => props.menu ? "500px" : "calc(100% - 60px)"};
+    transform: translate(-50%, -100%);
     left: 50%;
-    transform: ${props => props.menu ? "translate(-50%, -300%)" : "translateX(-50%)"};
     width: 100%;
     max-width: 600px;
     transition: ${props => props.menu ? "all .7s .1s" : "all 0s"};
