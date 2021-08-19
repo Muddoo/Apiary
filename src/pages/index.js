@@ -18,7 +18,6 @@ export default function Home() {
       <Nav isMenu={setMenu} menu={menu} />
       <Hero menu={menu} />
       <Info
-        background="#1A1B22"
         title="Why is it useful for your company?"
         subtitle="By handing over assignments to students for work, you free experienced employees from routine tasks, as well as increase brand awareness."
         cards={[
@@ -43,7 +42,31 @@ export default function Home() {
         ]}
       />
       <Info
-        background="#1A1B22"
+        mode="light"
+        title="What requests can we help with?"
+        subtitle="We carry out important, non&#x2011;urgent tasks, with results that you can use in your work."
+        cards={[
+          {
+            selected: true,
+            img: "/images/web.png",
+            title: "Web development",
+            text: "#programing",
+          },
+          {
+            selected: false,
+            img: "/images/analysis.png",
+            title: "Data analysis",
+            text: "#analysis",
+          },
+          {
+            selected: false,
+            img: "/images/science.png",
+            title: "Data science",
+            text: "#analysis",
+          },
+        ]}
+      />
+      <Info
         title="Why choose us?"
         subtitle="We have built the largest IT company in Russia. We know how to develop cool employees, and we work hard to make our clients' lives better and happier."
         cards={[

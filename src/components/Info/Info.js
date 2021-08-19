@@ -12,90 +12,84 @@ import {
 } from "./Info.styles";
 import Image from "next/image";
 
-function Info({ title, subtitle, background, cards = [], children }) {
+function Info({ title, subtitle, background, cards = [], mode, children }) {
   function createMarkup(markup) {
     return { __html: markup };
   }
 
   return (
-    <Container background={background}>
-      <Main background={background}>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
+    <Container background={background} mode={mode}>
+      <Main background={background} mode={mode}>
+        <Title mode={mode} dangerouslySetInnerHTML={createMarkup(title)} />
+        <Subtitle mode={mode}> {subtitle} </Subtitle>
         <CardsList>
           {cards.map((card, i) => (
-            <Card key={i} selected={card.selected}>
-              <CardImg>
+            <Card key={i} mode={mode} selected={card.selected}>
+              <CardImg mode={mode}>
                 <Image
                   src={card.img}
                   alt={card.title}
                   layout="fill"
-                  objectFit="contain"
-                  priority="true"
+                  objectFit={mode ? "cover" : "contain"}
                   quality={25}
+                  priority="true"
                 />
               </CardImg>
-              <CardBody>
-                <CardTitle>{card.title}</CardTitle>
-                <CardText dangerouslySetInnerHTML={createMarkup(card.text)} />
+              <CardBody mode={mode}>
+                <CardTitle mode={mode}>{card.title}</CardTitle>
+                <CardText
+                  mode={mode}
+                  dangerouslySetInnerHTML={createMarkup(card.text)}
+                />
               </CardBody>
             </Card>
           ))}
-          {/* <Card selected={true}>
-            <CardImg>
+          {/* <Card selected={true} mode={mode}>
+            <CardImg mode={mode}>
               <Image
-                src="/images/resource.png"
+                src="/images/web.png"
                 alt="Hero Image"
                 layout="fill"
-                objectFit="contain"
+                objectFit={mode ? "cover" : "contain"}
                 priority="true"
                 quality={25}
               />
             </CardImg>
-            <CardBody>
-              <CardTitle>Resource saving</CardTitle>
-              <CardText>
-                Delegate tasks for free and get results that can be used in your
-                future work.
-              </CardText>
+            <CardBody mode={mode}>
+              <CardTitle mode={mode}>Web development</CardTitle>
+              <CardText mode={mode}>#programing</CardText>
             </CardBody>
           </Card>
-          <Card>
-            <CardImg>
+          <Card mode={mode}>
+            <CardImg mode={mode}>
               <Image
-                src="/images/publicize.png"
+                src="/images/analysis.png"
                 alt="Hero Image"
                 layout="fill"
-                objectFit="contain"
+                objectFit={mode ? "cover" : "contain"}
                 priority="true"
                 quality={25}
               />
             </CardImg>
-            <CardBody>
-              <CardTitle>Publicize</CardTitle>
-              <CardText>
-                We take pride in the real-world value of the tasks that our
-                students perform and we share them in all available channels.
-              </CardText>
+            <CardBody mode={mode}>
+              <CardTitle mode={mode}>Data analysis</CardTitle>
+              <CardText mode={mode}>#analysis</CardText>
             </CardBody>
           </Card>
-          <Card>
-            <CardImg>
+          <Card mode={mode}>
+            <CardImg mode={mode}>
               <Image
-                src="/images/boost.png"
+                src="/images/science.png"
                 alt="Hero Image"
                 layout="fill"
-                objectFit="contain"
+                objectFit={mode ? "cover" : "contain"}
                 priority="true"
                 quality={25}
               />
             </CardImg>
-            <CardBody>
-              <CardTitle>PR boost</CardTitle>
-              <CardText>
-                This will increase the visibility of the&#160;company&#160;among&#160;job
-                seekers and attract those who share the values<br />of&#160;your&#160;company.
-              </CardText>
+            <CardBody mode={mode}>
+              <CardTitle mode={mode}>Data science</CardTitle>
+              <CardText mode={mode}>#analysis</CardText>
             </CardBody>
           </Card> */}
         </CardsList>

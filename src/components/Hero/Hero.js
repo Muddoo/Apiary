@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Hero({ menu }) {
   return (
-    <Container>
+    <Container mode>
       <Main>
         <Wrapper>
           <Text>
@@ -12,7 +12,7 @@ function Hero({ menu }) {
             <br />
             <Span>For free!</Span>
           </Text>
-          <Button menu={menu} >Delegate a task</Button>
+          <Button menu={menu}>Delegate a task</Button>
         </Wrapper>
         <Img>
           <Image
@@ -21,6 +21,7 @@ function Hero({ menu }) {
             layout="fill"
             priority="true"
             quality={25}
+            objectFit="cover"
           />
         </Img>
       </Main>
