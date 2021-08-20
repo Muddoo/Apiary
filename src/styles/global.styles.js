@@ -4,6 +4,11 @@ export default createGlobalStyle`
     html {
         overflow-x: hidden;
         scroll-behavior: smooth;
+        ::-webkit-scrollbar {
+            /* display: none; */
+            /* width: 32px;
+            background-color: grey; */
+        }
     }
 
     html,

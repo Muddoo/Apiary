@@ -3,6 +3,7 @@ import Nav from "../components/Nav/Nav.js";
 import Footer from "../components/Footer/Footer.js";
 import Hero from "../components/Hero/Hero.js";
 import Info from "../components/Info/Info.js";
+import Start from "../components/Start/Start.js";
 import { useState } from "react";
 // import dynamic from "next/dynamic";
 // const Hero = dynamic(import("../components/Hero/Hero.js"))
@@ -66,6 +67,7 @@ export default function Home() {
           },
         ]}
       />
+      <Start />
       <Info
         title="Why choose us?"
         subtitle="We have built the largest IT company in Russia. We know how to develop cool employees, and we work hard to make our clients' lives better and happier."

@@ -12,14 +12,14 @@ import {
 } from "./Info.styles";
 import Image from "next/image";
 
-function Info({ title, subtitle, background, cards = [], mode, children }) {
+function Info({ title, subtitle, cards = [], mode }) {
   function createMarkup(markup) {
     return { __html: markup };
   }
 
   return (
-    <Container background={background} mode={mode}>
-      <Main background={background} mode={mode}>
+    <Container mode={mode}>
+      <Main>
         <Title mode={mode} dangerouslySetInnerHTML={createMarkup(title)} />
         <Subtitle mode={mode}> {subtitle} </Subtitle>
         <CardsList>
@@ -33,6 +33,8 @@ function Info({ title, subtitle, background, cards = [], mode, children }) {
                   objectFit={mode ? "cover" : "contain"}
                   quality={25}
                   priority="true"
+                  //   placeholder="blur"
+                  //   blurDataURL={card.img}
                 />
               </CardImg>
               <CardBody mode={mode}>

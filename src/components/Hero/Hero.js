@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Hero({ menu }) {
   return (
-    <Container mode>
+    <Container mode="light">
       <Main>
         <Wrapper>
           <Text>

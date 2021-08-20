@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const Main = styled.section`
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: ${(props) => (props.mode ? "white" : "#1A1B22")};
+  background-color: inherit;
   color: ${(props) => props.color || "white"};
 
   @media screen and (max-width: 768px) {
@@ -52,6 +52,7 @@ export const Subtitle = styled.p`
     font-size: 20px;
     line-height: 30px;
     margin: 32px auto 118px;
+    margin-bottom: ${(props) => props.mode === "light" && "40px"};
     text-align: left;
     max-width: 527px;
   }
@@ -72,6 +73,7 @@ export const CardsList = styled.div`
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 `;
 
