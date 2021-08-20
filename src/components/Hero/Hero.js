@@ -21,7 +21,6 @@ function Hero({ menu }) {
             layout="fill"
             priority="true"
             quality={25}
-            objectFit="cover"
           />
         </Img>
       </Main>
