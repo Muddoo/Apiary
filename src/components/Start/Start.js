@@ -26,7 +26,7 @@ function Start({ mode = "light" }) {
                 alt="Hero Image"
                 layout="fill"
                 objectFit="cover"
-                priority="true"
+                // priority="true"
                 quality={25}
               />
             </CardImg>
@@ -45,7 +45,7 @@ function Start({ mode = "light" }) {
                 alt="Hero Image"
                 layout="fill"
                 objectFit="cover"
-                priority="true"
+                // priority="true"
                 quality={25}
               />
             </CardImg>
@@ -68,7 +68,7 @@ function Start({ mode = "light" }) {
                 alt="Hero Image"
                 layout="fill"
                 objectFit="cover"
-                priority="true"
+                // priority="true"
                 quality={25}
               />
             </CardImg>

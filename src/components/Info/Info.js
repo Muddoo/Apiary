@@ -32,9 +32,9 @@ function Info({ title, subtitle, cards = [], mode }) {
                   layout="fill"
                   objectFit={mode ? "cover" : "contain"}
                   quality={25}
-                  priority="true"
-                  //   placeholder="blur"
-                  //   blurDataURL={card.img}
+                  //   priority="true"
+                  placeholder="blur"
+                  blurDataURL={card.img}
                 />
               </CardImg>
               <CardBody mode={mode}>
