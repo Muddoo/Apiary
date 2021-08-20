@@ -21,6 +21,8 @@ function Hero({ menu }) {
             layout="fill"
             priority="true"
             quality={25}
+            placeHolder="blur"
+            blurDataURL="/images/hero.png"
           />
         </Img>
       </Main>
