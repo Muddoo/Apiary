@@ -7,10 +7,9 @@ export const Container = styled.section`
   margin: auto;
   background-color: ${(props) => {
     if(props.mode === "light") return "white";
-    if(props.mode === "grey") return "grey";
+    if(props.mode === "grey") return "#E5E5E5";
     return "#1A1B22"
   }};
-  /* background-color: ${(props) => (props.mode ? "white" : "#1A1B22")}; */
 
   @media screen and (max-width: 1024px) {
     padding: 0 3.90625vw;

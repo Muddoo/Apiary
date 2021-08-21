@@ -26,8 +26,10 @@ function Start({ mode = "light" }) {
                 alt="Hero Image"
                 layout="fill"
                 objectFit="cover"
-                // priority="true"
                 quality={25}
+                // priority="true"
+                placeholder="blur"
+                blurDataURL="/images/checklist.png"
               />
             </CardImg>
             <CardBody>
@@ -45,8 +47,10 @@ function Start({ mode = "light" }) {
                 alt="Hero Image"
                 layout="fill"
                 objectFit="cover"
-                // priority="true"
                 quality={25}
+                // priority="true"
+                placeholder="blur"
+                blurDataURL="/images/detail.png"
               />
             </CardImg>
             <CardBody>
@@ -68,8 +72,10 @@ function Start({ mode = "light" }) {
                 alt="Hero Image"
                 layout="fill"
                 objectFit="cover"
-                // priority="true"
                 quality={25}
+                // priority="true"
+                placeholder="blur"
+                blurDataURL="/images/work.png"
               />
             </CardImg>
             <CardBody>

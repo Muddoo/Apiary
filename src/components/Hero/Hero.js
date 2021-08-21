@@ -8,7 +8,7 @@ function Hero({ menu }) {
       <Main>
         <Wrapper>
           <Text>
-            Your task. Done&#160;by&#160;data&#160;and web development students.
+            Your task. Done&#160;by&#160;data and web&#160;development students.
             <br />
             <Span>For free!</Span>
           </Text>
@@ -19,10 +19,10 @@ function Hero({ menu }) {
             src="/images/hero.png"
             alt="Hero Image"
             layout="fill"
-            // priority="true"
+            priority="true"
             quality={25}
-            placeholder="blur"
-            blurDataURL="/images/hero.png"
+            // placeholder="blur"
+            // blurDataURL="/images/hero.png"
           />
         </Img>
       </Main>
