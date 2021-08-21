@@ -56,7 +56,8 @@ export const Icon = styled.button`
   ::before {
     content: "";
     display: block;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='2' viewBox='0 0 32 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='2' rx='1' fill='black'/%3E%3C/svg%3E");
+    background-color: black;
+    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='2' viewBox='0 0 32 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='2' rx='1' fill='black'/%3E%3C/svg%3E"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto;
@@ -68,7 +69,8 @@ export const Icon = styled.button`
   ::after {
     content: "";
     display: block;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='2' viewBox='0 0 32 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='2' rx='1' fill='black'/%3E%3C/svg%3E");
+    background-color: black;
+    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='2' viewBox='0 0 32 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='2' rx='1' fill='black'/%3E%3C/svg%3E"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto;

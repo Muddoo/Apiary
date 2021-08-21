@@ -10,7 +10,8 @@ function About() {
   useEffect(() => {
     AOS.init({
       easing: "ease-in-cubic",
-      offset: 200
+      offset: 200,
+      once: true
     });
   }, []);
 
