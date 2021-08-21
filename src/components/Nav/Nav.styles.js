@@ -58,10 +58,6 @@ export const Icon = styled.button`
     position: absolute;
     display: block;
     background-color: black;
-    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='2' viewBox='0 0 32 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='2' rx='1' fill='black'/%3E%3C/svg%3E"); */
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto; */
     width: 100%;
     height: 2px;
     top: calc(50% - 1px);
@@ -73,12 +69,6 @@ export const Icon = styled.button`
     position: absolute;
     display: block;
     background-color: black;
-    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='2' viewBox='0 0 32 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='2' rx='1' fill='black'/%3E%3C/svg%3E"); */
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    position: relative; */
-    /* top: ${(props) => (props.menu ? "-2px" : "6px")}; */
     width: 100%;
     height: 2px;
     top: ${props => props.menu ? "calc(50% - 1px)" : "calc(50% + 5px)"};
@@ -89,8 +79,6 @@ export const Icon = styled.button`
 
   @media screen and (max-width: 868px) {
     display: block;
-    /* display: grid;
-    align-content: center; */
   }
 `;
 
