@@ -5,6 +5,7 @@ import Hero from "../components/Hero/Hero.js";
 import Info from "../components/Info/Info.js";
 import Start from "../components/Start/Start.js";
 import About from "../components/About/About.js";
+import Projects from "../components/Projects/Projects.js";
 import { useState } from "react";
 // import dynamic from "next/dynamic";
 // const Hero = dynamic(import("../components/Hero/Hero.js"))
@@ -94,6 +95,7 @@ export default function Home() {
           },
         ]}
       />
+      <Projects />
       <Footer />
     </div>
   );
