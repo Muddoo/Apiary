@@ -71,8 +71,8 @@ function Projects() {
         </BtnWrapper>
         <ProjectsContainer>
           <ProjectsSlider index={index}>
-            <List selected={index === 0}>
-              <Project>
+            {/* <List selected={index === 0}> */}
+              <Project className="web">
                 <ProjectBanner>
                   <Poster>
                     <Image
@@ -185,7 +185,7 @@ function Projects() {
                 </Details>
               </Project>
 
-              <Project>
+              <Project className="web">
                 <ProjectBanner>
                   <Poster>
                     <Image
@@ -297,10 +297,10 @@ function Projects() {
                   </Text>
                 </Details>
               </Project>
-            </List>
+            {/* </List> */}
 
-            <List selected={index === 1}>
-              <Project>
+            {/* <List selected={index === 1}> */}
+              <Project className="analysis">
                 <ProjectBanner>
                   <Poster>
                     <Image
@@ -420,7 +420,7 @@ function Projects() {
                 </Details>
               </Project>
 
-              <Project>
+              <Project className="analysis">
                 <ProjectBanner>
                   <Poster>
                     <Image
@@ -537,10 +537,10 @@ function Projects() {
                   </Text>
                 </Details>
               </Project>
-            </List>
+            {/* </List> */}
 
-            <List selected={index === 2}>
-              <Project>
+            {/* <List selected={index === 2}> */}
+              <Project className="science">
                 <ProjectBanner>
                   <Poster>
                     <Image
@@ -653,7 +653,7 @@ function Projects() {
                 </Details>
               </Project>
 
-              <Project>
+              <Project className="science">
                 <ProjectBanner>
                   <Poster>
                     <Image
@@ -765,7 +765,7 @@ function Projects() {
                   </Text>
                 </Details>
               </Project>
-            </List>
+            {/* </List> */}
           </ProjectsSlider>
         </ProjectsContainer>
         <BtnWrapper className="bottom">

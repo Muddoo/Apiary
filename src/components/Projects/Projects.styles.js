@@ -164,6 +164,8 @@ export const ProjectsSlider = styled.div`
   display: grid;
   grid-auto-columns: 100%;
   grid-auto-flow: column;
+  grid-auto-rows: 1fr;
+  row-gap: 80px;
   width: 100%;
   overflow: visible;
   transform: ${(props) => `translateX(${props.index * -100}%)`};
@@ -182,11 +184,21 @@ export const Project = styled.div`
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: min-content;
+  grid-auto-rows: 1fr min-content;
   width: 100%;
 
   & > :first-child {
     grid-column: span 2;
+  }
+
+  &.web {
+      grid-column: 1;
+  }
+  &.analysis {
+      grid-column: 2;
+  }
+  &.science {
+      grid-column: 3;
   }
 `;
 
