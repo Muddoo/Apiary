@@ -25,12 +25,11 @@ export const Wrapper = styled.div`
   align-content: center;
   grid-auto-rows: min-content;
 
-
   &.text {
-      gap: 20px;
-      max-width: 100%;
-      width: auto;
-      min-width: auto;
+    gap: 20px;
+    max-width: 100%;
+    width: auto;
+    min-width: auto;
   }
 
   @media screen and (max-width: 1024px) {
@@ -112,13 +111,13 @@ export const BtnWrapper = styled.div`
   justify-content: space-between;
   margin-top: 60px;
   margin-bottom: 80px;
-  gap: 30px;
+  gap: 40px;
 
   &.bottom {
     justify-content: center;
-    gap: 40px;
-    margin-top: 80px;
-    margin-bottom: 0;
+    /* margin-top: 80px;
+    margin-bottom: 0; */
+    margin: 0;
 
     & > * {
       max-width: 293px;
@@ -127,6 +126,17 @@ export const BtnWrapper = styled.div`
     & > *:hover {
       background: #ff9900;
       color: white;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &.bottom {
+      margin-top: 20px;
+    }
+
+    & > *,
+    &.bottom > * {
+      max-width: 288px;
     }
   }
 `;
@@ -147,6 +157,7 @@ export const Button = styled.button`
   line-height: 32px;
   color: #ff9900;
   transition: all 0.3s;
+  box-sizing: border-box;
 
   &.selected {
     background: #ff9900;
@@ -161,6 +172,7 @@ export const ProjectsContainer = styled.div`
 `;
 
 export const ProjectsSlider = styled.div`
+  position: relative;
   display: grid;
   grid-auto-columns: 100%;
   grid-auto-flow: column;
@@ -171,11 +183,21 @@ export const ProjectsSlider = styled.div`
 `;
 
 export const List = styled.div`
+  position: ${(props) => (props.selected ? "relative" : "absolute")};
+  left: ${props => `${100 * props.index}%`};
   display: grid;
+  grid-auto-rows: min-content;
+  height: 100%;
+  overflow: hidden;
   gap: 80px;
   width: 100%;
+  height: 100%;
   opacity: ${(props) => (props.selected ? "1" : "0.4")};
   transition: all 0.4s;
+
+  @media screen and (max-width: 1024px) {
+    gap: 60px;
+  }
 `;
 
 export const Project = styled.div`
@@ -193,7 +215,6 @@ export const Project = styled.div`
 export const ProjectBanner = styled.div`
   display: grid;
   min-height: 365px;
-  /* min-height: calc(100% + 40px); */
   max-width: 100%;
   border-radius: 14px;
   overflow: hidden;
@@ -231,12 +252,24 @@ export const Details = styled.div`
   & > :nth-child(2) {
     grid-column: span 2;
   }
+
+  @media screen and (max-width: 1024px) {
+    padding: 20px;
+    &.member {
+      gap: 20px;
+      padding: 20px;
+    }
+  }
 `;
 
 export const MemberWraper = styled.div`
   display: flex;
   gap: 24px;
   width: 100%;
+
+  @media screen and (max-width: 1024px) {
+      gap: 16px;
+  }  
 `;
 
 export const MemberImgWrapper = styled.div`
@@ -258,6 +291,6 @@ export const MemberImg = styled.div`
   overflow: hidden;
   background-color: #c4c4c4;
   :not(:last-of-type) {
-    margin-left: -15px;
+    margin-left: -11px;
   }
 `;

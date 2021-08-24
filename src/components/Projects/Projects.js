@@ -71,7 +71,7 @@ function Projects() {
         </BtnWrapper>
         <ProjectsContainer>
           <ProjectsSlider index={index}>
-            <List selected={index === 0}>
+            <List index={0} selected={index === 0}>
               <Project>
                 <ProjectBanner>
                   <Poster>
@@ -91,7 +91,7 @@ function Projects() {
                     <Wrapper className="text">
                       <Text className="medium">
                         Landing page website for the company that cakes
-                        automated logistics robots from Oakland, CA
+                        automated logistics robots from Oakland,&#160;CA
                       </Text>
                     </Wrapper>
                     <Text className="xsm">May 2021</Text>
@@ -204,7 +204,7 @@ function Projects() {
                     <Wrapper className="text">
                       <Text className="medium">
                         Landing page website for the company that cakes
-                        automated logistics robots from Oakland, CA
+                        automated logistics robots from Oakland,&#160;CA
                       </Text>
                     </Wrapper>
                     <Text className="xsm">May 2021</Text>
@@ -297,9 +297,133 @@ function Projects() {
                   </Text>
                 </Details>
               </Project>
+              <BtnWrapper className="bottom">
+                <Button>More projects...</Button>
+                <Button className="selected">Delegate a task</Button>
+              </BtnWrapper>
             </List>
 
-            <List selected={index === 1}>
+            <List index={1} selected={index === 1}>
+              <Project>
+                <ProjectBanner>
+                  <Poster>
+                    <Image
+                      src="/images/norbu.png"
+                      alt="norbu"
+                      layout="fill"
+                      priority="true"
+                      placeholder="blur"
+                      blurDataURL="/images/prim.png"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  </Poster>
+                  <Details>
+                    <Title>Norbu, DA</Title>
+                    <Wrapper className="text">
+                      <Text className="medium">
+                        Norbu Stress Control is the first anti-stress app that
+                        teaches to manage stress and emotions on the physical
+                        level.
+                      </Text>
+                      <Text className="medium">
+                        Task: to calculate main product metrics, research
+                        possible reasons for users behaviour such as retention,
+                        payments, app removal, etc. and analyze User journey
+                        behaviour.
+                      </Text>
+                    </Wrapper>
+                    <Text className="xsm">May 2021</Text>
+                    <Text as="a" className="xsm orange right">
+                      Visit wbesite →
+                    </Text>
+                  </Details>
+                </ProjectBanner>
+                <Details className="member">
+                  <MemberWraper>
+                    <MemberImgWrapper>
+                      <MemberImg>
+                        <Image
+                          src="/images/client.png"
+                          alt="banner"
+                          layout="fill"
+                          placeholder="blur"
+                          blurDataURL="/images/client.png"
+                          priority="true"
+                        />
+                      </MemberImg>
+                    </MemberImgWrapper>
+                    <MemberInfoWrapper>
+                      <Title className="medium">Maxim Antonenko</Title>
+                      <Text className="sm">Ant Robotics CEO</Text>
+                    </MemberInfoWrapper>
+                  </MemberWraper>
+                  <Text className="medium member">
+                    “The Data Analytics students have highlighted a few
+                    languages which show a growing demand for translation and
+                    expanded our list of keywords to detect more
+                    translation-related user reviews,” Demid said. “The Data
+                    Science students tested a wide range of natural language
+                    processing algorithms, including deep machine learning...
+                  </Text>
+                  <Text className="orange xsm" as="button">
+                    Read full review
+                  </Text>
+                </Details>
+                <Details className="member">
+                  <MemberWraper>
+                    <MemberImgWrapper>
+                      <MemberImg>
+                        <Image
+                          priority="true"
+                          src="/images/client.png"
+                          alt="ant"
+                          layout="fill"
+                          placeholder="blur"
+                          blurDataURL="/images/ant.png"
+                        />
+                      </MemberImg>
+                      <MemberImg>
+                        <Image
+                          priority="true"
+                          src="/images/prim.png"
+                          alt="ant"
+                          layout="fill"
+                          placeholder="blur"
+                          blurDataURL="/images/ant.png"
+                        />
+                      </MemberImg>
+                      <MemberImg>
+                        <Image
+                          priority="true"
+                          src="/images/client.png"
+                          alt="ant"
+                          layout="fill"
+                          placeholder="blur"
+                          blurDataURL="/images/ant.png"
+                        />
+                      </MemberImg>
+                    </MemberImgWrapper>
+                    <MemberInfoWrapper>
+                      <Title className="medium">Students team</Title>
+                      <Text className="sm">
+                        Maria Wright, Maria Wright, Enyel Sequeira
+                      </Text>
+                    </MemberInfoWrapper>
+                  </MemberWraper>
+                  <Text className="medium member">
+                    “I learned so much from it,” Xia said. “Not just about new
+                    packages and methods of analysis and reporting, but also
+                    workflow management, how to clarify task requirements,
+                    collaborate with others, and more. Those are the kind of
+                    experiences I can put on my resume, and that’s awesome too.”
+                  </Text>
+                  <Text className="orange xsm" as="button">
+                    Read full review
+                  </Text>
+                </Details>
+              </Project>
+
               <Project>
                 <ProjectBanner>
                   <Poster>
@@ -537,10 +661,14 @@ function Projects() {
                   </Text>
                 </Details>
               </Project>
+              <BtnWrapper className="bottom">
+                <Button>More projects...</Button>
+                <Button className="selected">Delegate a task</Button>
+              </BtnWrapper>
             </List>
 
-            <List selected={index === 2}>
-              <Project>
+            <List index={2} selected={index === 2}>
+              {/* <Project>
                 <ProjectBanner>
                   <Poster>
                     <Image
@@ -559,7 +687,7 @@ function Projects() {
                     <Wrapper className="text">
                       <Text className="medium">
                         Landing page website for the company that cakes
-                        automated logistics robots from Oakland, CA
+                        automated logistics robots from Oakland,&#160;CA
                       </Text>
                     </Wrapper>
                     <Text className="xsm">May 2021</Text>
@@ -651,7 +779,7 @@ function Projects() {
                     Read full review
                   </Text>
                 </Details>
-              </Project>
+              </Project> */}
 
               <Project>
                 <ProjectBanner>
@@ -672,7 +800,7 @@ function Projects() {
                     <Wrapper className="text">
                       <Text className="medium">
                         Landing page website for the company that cakes
-                        automated logistics robots from Oakland, CA
+                        automated logistics robots from Oakland,&#160;CA
                       </Text>
                     </Wrapper>
                     <Text className="xsm">May 2021</Text>
@@ -765,13 +893,17 @@ function Projects() {
                   </Text>
                 </Details>
               </Project>
+              <BtnWrapper className="bottom">
+                <Button>More projects...</Button>
+                <Button className="selected">Delegate a task</Button>
+              </BtnWrapper>
             </List>
           </ProjectsSlider>
         </ProjectsContainer>
-        <BtnWrapper className="bottom">
+        {/* <BtnWrapper className="bottom">
           <Button>More projects...</Button>
           <Button className="selected">Delegate a task</Button>
-        </BtnWrapper>
+        </BtnWrapper> */}
       </Main>
     </Container>
   );
