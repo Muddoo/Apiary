@@ -22,11 +22,11 @@ function Nav({menu, isMenu}) {
         />
         <Wrapper menu={menu}>
           <NavList menu={menu}>
-            <NavLink href="#">We can help!</NavLink>
-            <NavLink href="#">About</NavLink>
-            <NavLink href="#">How to start</NavLink>
-            <NavLink href="#">Projects</NavLink>
-            <NavLink href="#">Contacts</NavLink>
+            <NavLink href="#help">We can help!</NavLink>
+            <NavLink href="#about">About</NavLink>
+            <NavLink href="#start">How to start</NavLink>
+            <NavLink href="#projects">Projects</NavLink>
+            <NavLink href="#contact">Contacts</NavLink>
           </NavList>
           <Button menu={menu} type="button" aria-label="button">
             Delegate a task

@@ -27,7 +27,7 @@ function Projects() {
   const [index, setIndex] = useState(0);
 
   return (
-    <Container mode="grey">
+    <Container mode="grey" id="projects">
       <Main>
         <Banner>
           <Wrapper>

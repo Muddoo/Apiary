@@ -12,13 +12,13 @@ import {
 } from "./Info.styles";
 import Image from "next/image";
 
-function Info({ title, subtitle, cards = [], mode }) {
+function Info({ title, subtitle, cards = [], mode, id }) {
   function createMarkup(markup) {
     return { __html: markup };
   }
 
   return (
-    <Container mode={mode}>
+    <Container mode={mode} id={id}>
       <Main>
         <Title mode={mode} dangerouslySetInnerHTML={createMarkup(title)} />
         <Subtitle mode={mode}> {subtitle} </Subtitle>

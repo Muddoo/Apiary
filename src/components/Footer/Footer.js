@@ -8,7 +8,7 @@ import {
 
 function Footer() {
   return (
-    <FooterContainer>
+    <FooterContainer id="contact">
       <Main>
         <Text order="-2" as="a" href="#">
           About us

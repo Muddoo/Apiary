@@ -45,6 +45,7 @@ export default function Home() {
         ]}
       />
       <Info
+        id="help"
         mode="light"
         title="What requests can we help with?"
         subtitle="We carry out important, non&#x2011;urgent tasks, with results that you can use in your work."

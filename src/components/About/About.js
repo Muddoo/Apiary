@@ -16,7 +16,7 @@ function About() {
   }, []);
 
   return (
-    <Container mode="grey">
+    <Container mode="grey" id="about">
       <Main>
         <Title data-aos="fade-up" data-aos-offset="50" mode="light">
           What is Practicum by Yandex?

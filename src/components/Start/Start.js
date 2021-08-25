@@ -15,7 +15,7 @@ import Image from "next/image";
 
 function Start({ mode = "light" }) {
   return (
-    <Container mode={mode}>
+    <Container mode={mode} id="start">
       <Main>
         <Title mode={mode}>How to start?</Title>
         <CardsList>
