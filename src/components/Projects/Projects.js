@@ -93,7 +93,13 @@ function Projects() {
                       </Text>
                     </Wrapper>
                     <Text className="xsm">May 2021</Text>
-                    <Text as="a" className="xsm orange right">
+                    <Text
+                      as="a"
+                      className="xsm orange right"
+                      href="https://unruffled-goldwasser-636557.netlify.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Visit wbesite →
                     </Text>
                   </Details>
@@ -206,7 +212,13 @@ function Projects() {
                       </Text>
                     </Wrapper>
                     <Text className="xsm">May 2021</Text>
-                    <Text as="a" className="xsm orange right">
+                    <Text
+                      as="a"
+                      className="xsm orange right"
+                      href="https://prim-u-izin0qdwo-muddoo.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Visit wbesite →
                     </Text>
                   </Details>
