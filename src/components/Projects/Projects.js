@@ -19,8 +19,6 @@ import {
   MemberImgWrapper,
   MemberInfoWrapper,
   MemberImg,
-  Date,
-  Web,
 } from "./Projects.styles.js";
 import Image from "next/image";
 import { useState } from "react";
@@ -79,11 +77,11 @@ function Projects() {
                       src="/images/ant.png"
                       alt="banner"
                       layout="fill"
-                      priority="true"
+                      //   priority="true"
                       placeholder="blur"
                       blurDataURL="/images/ant.png"
-                    //   objectFit="cover"
-                    //   objectPosition="center"
+                      //   objectFit="cover"
+                      //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -110,7 +108,7 @@ function Projects() {
                           layout="fill"
                           placeholder="blur"
                           blurDataURL="/images/client.png"
-                          priority="true"
+                          //   priority="true"
                         />
                       </MemberImg>
                     </MemberImgWrapper>
@@ -136,7 +134,7 @@ function Projects() {
                     <MemberImgWrapper>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -146,7 +144,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/prim.png"
                           alt="ant"
                           layout="fill"
@@ -156,7 +154,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -192,11 +190,11 @@ function Projects() {
                       src="/images/prim.png"
                       alt="banner"
                       layout="fill"
-                      priority="true"
+                      //   priority="true"
                       placeholder="blur"
                       blurDataURL="/images/prim.png"
-                    //   objectFit="cover"
-                    //   objectPosition="center"
+                      //   objectFit="cover"
+                      //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -223,7 +221,7 @@ function Projects() {
                           layout="fill"
                           placeholder="blur"
                           blurDataURL="/images/client.png"
-                          priority="true"
+                          //   priority="true"
                         />
                       </MemberImg>
                     </MemberImgWrapper>
@@ -249,7 +247,7 @@ function Projects() {
                     <MemberImgWrapper>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -259,7 +257,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/prim.png"
                           alt="ant"
                           layout="fill"
@@ -269,7 +267,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -311,11 +309,11 @@ function Projects() {
                       src="/images/norbu.png"
                       alt="norbu"
                       layout="fill"
-                      priority="true"
+                      //   priority="true"
                       placeholder="blur"
                       blurDataURL="/images/prim.png"
-                    //   objectFit="cover"
-                    //   objectPosition="center"
+                      //   objectFit="cover"
+                      //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -349,7 +347,7 @@ function Projects() {
                           layout="fill"
                           placeholder="blur"
                           blurDataURL="/images/client.png"
-                          priority="true"
+                          //   priority="true"
                         />
                       </MemberImg>
                     </MemberImgWrapper>
@@ -375,7 +373,7 @@ function Projects() {
                     <MemberImgWrapper>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -385,7 +383,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/prim.png"
                           alt="ant"
                           layout="fill"
@@ -395,7 +393,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -431,11 +429,11 @@ function Projects() {
                       src="/images/norbu.png"
                       alt="norbu"
                       layout="fill"
-                      priority="true"
+                      //   priority="true"
                       placeholder="blur"
                       blurDataURL="/images/prim.png"
-                    //   objectFit="cover"
-                    //   objectPosition="center"
+                      //   objectFit="cover"
+                      //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -469,7 +467,7 @@ function Projects() {
                           layout="fill"
                           placeholder="blur"
                           blurDataURL="/images/client.png"
-                          priority="true"
+                          //   priority="true"
                         />
                       </MemberImg>
                     </MemberImgWrapper>
@@ -495,7 +493,7 @@ function Projects() {
                     <MemberImgWrapper>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -505,7 +503,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/prim.png"
                           alt="ant"
                           layout="fill"
@@ -515,7 +513,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -551,11 +549,11 @@ function Projects() {
                       src="/images/correct.png"
                       alt="correct"
                       layout="fill"
-                      priority="true"
+                      //   priority="true"
                       placeholder="blur"
                       blurDataURL="/images/ant.png"
-                    //   objectFit="cover"
-                    //   objectPosition="center"
+                      //   objectFit="cover"
+                      //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -587,7 +585,7 @@ function Projects() {
                           layout="fill"
                           placeholder="blur"
                           blurDataURL="/images/client.png"
-                          priority="true"
+                          //   priority="true"
                         />
                       </MemberImg>
                     </MemberImgWrapper>
@@ -613,7 +611,7 @@ function Projects() {
                     <MemberImgWrapper>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -623,7 +621,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/prim.png"
                           alt="ant"
                           layout="fill"
@@ -633,7 +631,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -788,11 +786,11 @@ function Projects() {
                       src="/images/prim.png"
                       alt="banner"
                       layout="fill"
-                      priority="true"
+                      //   priority="true"
                       placeholder="blur"
                       blurDataURL="/images/prim.png"
-                    //   objectFit="cover"
-                    //   objectPosition="center"
+                      //   objectFit="cover"
+                      //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -819,7 +817,7 @@ function Projects() {
                           layout="fill"
                           placeholder="blur"
                           blurDataURL="/images/client.png"
-                          priority="true"
+                          //   priority="true"
                         />
                       </MemberImg>
                     </MemberImgWrapper>
@@ -845,7 +843,7 @@ function Projects() {
                     <MemberImgWrapper>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -855,7 +853,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/prim.png"
                           alt="ant"
                           layout="fill"
@@ -865,7 +863,7 @@ function Projects() {
                       </MemberImg>
                       <MemberImg>
                         <Image
-                          priority="true"
+                          //   priority="true"
                           src="/images/client.png"
                           alt="ant"
                           layout="fill"
@@ -900,10 +898,6 @@ function Projects() {
             </List>
           </ProjectsSlider>
         </ProjectsContainer>
-        {/* <BtnWrapper className="bottom">
-          <Button>More projects...</Button>
-          <Button className="selected">Delegate a task</Button>
-        </BtnWrapper> */}
       </Main>
     </Container>
   );

@@ -78,7 +78,6 @@ export const Title = styled.p`
   }
 
   @media screen and (max-width: 768px) {
-    /* font-size: 36px; */
     font-size: 32px;
     line-height: 37px;
 
@@ -202,11 +201,6 @@ export const BtnWrapper = styled.div`
     &.bottom {
       margin-top: 20px;
     }
-
-    /* & > *,
-    &.bottom > * {
-      max-width: 288px;
-    } */
   }
 
   @media screen and (max-width: 768px) {
@@ -258,7 +252,6 @@ export const Button = styled.button`
 
   @media screen and (max-width: 768px) {
     font-size: 24px;
-    /* max-width: 288px; */
   }
 `;
 
@@ -335,7 +328,6 @@ export const ProjectBanner = styled.div`
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
-    /* grid-auto-rows: 1fr 1.1fr; */
   }
 `;
 
@@ -348,8 +340,6 @@ export const Poster = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    /* height: 76vw;
-    max-height: 400px; */
     border-radius: 0;
     min-height: min(76vw, 350px);
   }
@@ -394,7 +384,6 @@ export const Details = styled.div`
     &.member {
       padding: 20px 12px;
       min-height: auto;
-      /* gap: 32px; */
     }
 
     :nth-of-type(3) {
@@ -426,7 +415,6 @@ export const MemberWraper = styled.div`
 export const MemberImgWrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
-  /* align-items: center; */
 `;
 
 export const MemberInfoWrapper = styled.div`

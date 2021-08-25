@@ -46,54 +46,6 @@ function Info({ title, subtitle, cards = [], mode }) {
               </CardBody>
             </Card>
           ))}
-          {/* <Card selected={true} mode={mode}>
-            <CardImg mode={mode}>
-              <Image
-                src="/images/web.png"
-                alt="Hero Image"
-                layout="fill"
-                objectFit={mode ? "cover" : "contain"}
-                priority="true"
-                quality={25}
-              />
-            </CardImg>
-            <CardBody mode={mode}>
-              <CardTitle mode={mode}>Web development</CardTitle>
-              <CardText mode={mode}>#programing</CardText>
-            </CardBody>
-          </Card>
-          <Card mode={mode}>
-            <CardImg mode={mode}>
-              <Image
-                src="/images/analysis.png"
-                alt="Hero Image"
-                layout="fill"
-                objectFit={mode ? "cover" : "contain"}
-                priority="true"
-                quality={25}
-              />
-            </CardImg>
-            <CardBody mode={mode}>
-              <CardTitle mode={mode}>Data analysis</CardTitle>
-              <CardText mode={mode}>#analysis</CardText>
-            </CardBody>
-          </Card>
-          <Card mode={mode}>
-            <CardImg mode={mode}>
-              <Image
-                src="/images/science.png"
-                alt="Hero Image"
-                layout="fill"
-                objectFit={mode ? "cover" : "contain"}
-                priority="true"
-                quality={25}
-              />
-            </CardImg>
-            <CardBody mode={mode}>
-              <CardTitle mode={mode}>Data science</CardTitle>
-              <CardText mode={mode}>#analysis</CardText>
-            </CardBody>
-          </Card> */}
         </CardsList>
       </Main>
     </Container>
