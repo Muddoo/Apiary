@@ -41,6 +41,7 @@ export const Wrapper = styled.div`
     max-width: 100%;
     width: auto;
     min-width: auto;
+    order: 0;
   }
 
   @media screen and (max-width: 1024px) {
@@ -77,7 +78,8 @@ export const Title = styled.p`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 36px;
+    /* font-size: 36px; */
+    font-size: 32px;
     line-height: 37px;
 
     &.medium {
@@ -201,10 +203,10 @@ export const BtnWrapper = styled.div`
       margin-top: 20px;
     }
 
-    & > *,
+    /* & > *,
     &.bottom > * {
       max-width: 288px;
-    }
+    } */
   }
 
   @media screen and (max-width: 768px) {
@@ -213,6 +215,17 @@ export const BtnWrapper = styled.div`
     grid-template-columns: 1fr;
     gap: 20px;
     justify-items: center;
+
+    &.bottom {
+      gap: 20px;
+      margin-top: 0;
+    }
+
+    &.bottom {
+      & > * {
+        max-width: 100%;
+      }
+    }
   }
 `;
 
@@ -245,6 +258,7 @@ export const Button = styled.button`
 
   @media screen and (max-width: 768px) {
     font-size: 24px;
+    /* max-width: 288px; */
   }
 `;
 
@@ -252,6 +266,12 @@ export const ProjectsContainer = styled.div`
   display: block;
   width: 100%;
   overflow-x: hidden;
+
+  @media screen and (max-width: 768px) {
+    transform: scale(1.045, 1);
+    max-width: 470px;
+    margin: auto;
+  }
 `;
 
 export const ProjectsSlider = styled.div`
@@ -312,6 +332,11 @@ export const ProjectBanner = styled.div`
   overflow: hidden;
   grid-template-columns: calc(50% - 10px) 1fr;
   background-color: white;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    /* grid-auto-rows: 1fr 1.1fr; */
+  }
 `;
 
 export const Poster = styled.div`
@@ -320,6 +345,14 @@ export const Poster = styled.div`
   overflow: hidden;
   width: 100%;
   height: 100%;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    /* height: 76vw;
+    max-height: 400px; */
+    border-radius: 0;
+    min-height: min(76vw, 350px);
+  }
 `;
 
 export const Details = styled.div`
@@ -354,17 +387,23 @@ export const Details = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    padding: 16px 12px;
+    gap: 16px;
+    min-height: min(80vw, 340px);
+
     &.member {
       padding: 20px 12px;
+      min-height: auto;
+      /* gap: 32px; */
     }
 
     :nth-of-type(3) {
-        & > :first-child {
-            display: grid;
-            gap: 16px;
-            grid-template-columns: 1fr;
-            justify-items: start;
-        }
+      & > :first-child {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+        justify-items: start;
+      }
     }
   }
 `;
@@ -380,12 +419,14 @@ export const MemberWraper = styled.div`
 
   @media screen and (max-width: 768px) {
     gap: 12px;
+    margin-bottom: 12px;
   }
 `;
 
 export const MemberImgWrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
+  /* align-items: center; */
 `;
 
 export const MemberInfoWrapper = styled.div`

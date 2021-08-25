@@ -82,8 +82,8 @@ function Projects() {
                       priority="true"
                       placeholder="blur"
                       blurDataURL="/images/ant.png"
-                      objectFit="cover"
-                      objectPosition="center"
+                    //   objectFit="cover"
+                    //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -195,8 +195,8 @@ function Projects() {
                       priority="true"
                       placeholder="blur"
                       blurDataURL="/images/prim.png"
-                      objectFit="cover"
-                      objectPosition="center"
+                    //   objectFit="cover"
+                    //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -314,8 +314,8 @@ function Projects() {
                       priority="true"
                       placeholder="blur"
                       blurDataURL="/images/prim.png"
-                      objectFit="cover"
-                      objectPosition="center"
+                    //   objectFit="cover"
+                    //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -434,8 +434,8 @@ function Projects() {
                       priority="true"
                       placeholder="blur"
                       blurDataURL="/images/prim.png"
-                      objectFit="cover"
-                      objectPosition="center"
+                    //   objectFit="cover"
+                    //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -554,8 +554,8 @@ function Projects() {
                       priority="true"
                       placeholder="blur"
                       blurDataURL="/images/ant.png"
-                      objectFit="cover"
-                      objectPosition="center"
+                    //   objectFit="cover"
+                    //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -678,8 +678,8 @@ function Projects() {
                       priority="true"
                       placeholder="blur"
                       blurDataURL="/images/ant.png"
-                      objectFit="cover"
-                      objectPosition="center"
+                    //   objectFit="cover"
+                    //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
@@ -791,8 +791,8 @@ function Projects() {
                       priority="true"
                       placeholder="blur"
                       blurDataURL="/images/prim.png"
-                      objectFit="cover"
-                      objectPosition="center"
+                    //   objectFit="cover"
+                    //   objectPosition="center"
                     />
                   </Poster>
                   <Details>
