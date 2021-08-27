@@ -6,20 +6,22 @@ import Info from "../components/Info/Info.js";
 import Start from "../components/Start/Start.js";
 import About from "../components/About/About.js";
 import Projects from "../components/Projects/Projects.js";
+import Form from "../components/Form/Form.js";
 import { useState } from "react";
 // import dynamic from "next/dynamic";
 // const Hero = dynamic(import("../components/Hero/Hero.js"))
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
+  const [formVisible, setForm] = useState(false);
 
   return (
     <div>
       <Head>
         <title>Apiary</title>
       </Head>
-      <Nav isMenu={setMenu} menu={menu} />
-      <Hero menu={menu} />
+      <Nav isMenu={setMenu} menu={menu} setForm={setForm} />
+      <Hero menu={menu} setForm={setForm} />
       <Info
         title="Why is it useful for your company?"
         subtitle="By handing over assignments to students for work, you free experienced employees from routine tasks, as well as increase brand awareness."
@@ -70,8 +72,8 @@ export default function Home() {
           },
         ]}
       />
-      <About />
-      <Start />
+      <About setForm={setForm} />
+      <Start setForm={setForm} />
       <Info
         title="Why choose us?"
         subtitle="We have built the largest IT company in Russia. We know how to develop cool employees, and we work hard to make our clients' lives better and happier."
@@ -96,8 +98,10 @@ export default function Home() {
           },
         ]}
       />
-      <Projects />
+      <Projects setForm={setForm} />
       <Footer />
+
+      <Form open={formVisible} setForm={setForm} />
     </div>
   );
 }

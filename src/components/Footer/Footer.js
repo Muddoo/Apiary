@@ -10,7 +10,7 @@ function Footer() {
   return (
     <FooterContainer id="contact">
       <Main>
-        <Text order="-2" as="a" href="#">
+        <Text order="-2" as="a" href="#about">
           About us
         </Text>
         <Wrapper>

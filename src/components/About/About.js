@@ -6,12 +6,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-function About() {
+function About({ setForm }) {
   useEffect(() => {
     AOS.init({
       easing: "ease-in-cubic",
       offset: 200,
-      once: true
+      once: true,
     });
   }, []);
 
@@ -22,9 +22,7 @@ function About() {
           What is Practicum by Yandex?
         </Title>
         <List>
-          <Snippet
-            data-aos="fade-right"
-          >
+          <Snippet data-aos="fade-right">
             <Img />
             <Text>
               Practicum by Yandex is a kind of boot camp. Our goal is to help
@@ -34,17 +32,10 @@ function About() {
               review of experienced mentors.
             </Text>
           </Snippet>
-          <Snippet
-            data-aos="fade-up-left"
-            data-aos-anchor=".a2"
-          >
+          <Snippet data-aos="fade-up-left" data-aos-anchor=".a2">
             <Text>Who will solve the problems? How much does it cost?</Text>
           </Snippet>
-          <Snippet
-            data-aos="fade-right"
-            data-aos-delay="500"
-            className="a2"
-          >
+          <Snippet data-aos="fade-right" data-aos-delay="500" className="a2">
             <Img />
             <Text>
               It is a win-win situation: we take real tasks from real companies
@@ -53,17 +44,10 @@ function About() {
               curators and returned to the customer as ordered for free.
             </Text>
           </Snippet>
-          <Snippet
-            data-aos="fade-up-left"
-            data-aos-anchor=".a3"
-          >
+          <Snippet data-aos="fade-up-left" data-aos-anchor=".a3">
             <Text>Why is it free?</Text>
           </Snippet>
-          <Snippet
-            data-aos="fade-right"
-            data-aos-delay="500"
-            className="a3"
-          >
+          <Snippet data-aos="fade-right" data-aos-delay="500" className="a3">
             <Img />
             <Text>
               Because Practicum has students who are eager to gain real life
@@ -71,10 +55,7 @@ function About() {
               take on your tasks
             </Text>
           </Snippet>
-          <Snippet
-            data-aos="flip-down"
-            data-aos-anchor=".start"
-          >
+          <Snippet data-aos="flip-down" data-aos-anchor=".start">
             <Text>Wow! I'm ready to start!</Text>
           </Snippet>
         </List>
@@ -82,6 +63,7 @@ function About() {
           data-aos="zoom-in-up"
           data-aos-delay="500"
           className="start"
+          onClick={() => setForm(true)}
         >
           Delegate a task
         </Button>

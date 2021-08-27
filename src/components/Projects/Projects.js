@@ -23,7 +23,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 
-function Projects() {
+function Projects({ setForm }) {
   const [index, setIndex] = useState(0);
 
   return (
@@ -309,7 +309,9 @@ function Projects() {
               </Project>
               <BtnWrapper className="bottom">
                 <Button>More projects...</Button>
-                <Button className="selected">Delegate a task</Button>
+                <Button className="selected" onClick={() => setForm(true)}>
+                  Delegate a task
+                </Button>
               </BtnWrapper>
             </List>
 
@@ -673,7 +675,9 @@ function Projects() {
               </Project>
               <BtnWrapper className="bottom">
                 <Button>More projects...</Button>
-                <Button className="selected">Delegate a task</Button>
+                <Button className="selected" onClick={() => setForm(true)}>
+                  Delegate a task
+                </Button>
               </BtnWrapper>
             </List>
 
@@ -905,7 +909,9 @@ function Projects() {
               </Project>
               <BtnWrapper className="bottom">
                 <Button>More projects...</Button>
-                <Button className="selected">Delegate a task</Button>
+                <Button className="selected" onClick={() => setForm(true)}>
+                  Delegate a task
+                </Button>
               </BtnWrapper>
             </List>
           </ProjectsSlider>

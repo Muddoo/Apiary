@@ -42,7 +42,7 @@ export default createGlobalStyle`
         cursor: pointer;
     }
 
-    fieldset {
+    fieldset, input, textarea {
         all: unset;
     }
 

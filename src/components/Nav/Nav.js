@@ -9,7 +9,7 @@ import {
   Button,
 } from "./Nav.styles";
 
-function Nav({menu, isMenu}) {
+function Nav({ menu, isMenu, setForm }) {
   return (
     <NavContainer>
       <Navbar>
@@ -28,7 +28,12 @@ function Nav({menu, isMenu}) {
             <NavLink href="#projects">Projects</NavLink>
             <NavLink href="#contact">Contacts</NavLink>
           </NavList>
-          <Button menu={menu} type="button" aria-label="button">
+          <Button
+            type="button"
+            aria-label="button"
+            menu={menu}
+            onClick={() => setForm(true)}
+          >
             Delegate a task
           </Button>
         </Wrapper>

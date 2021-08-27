@@ -2,7 +2,7 @@ import { Container } from "../Container/Container.styles";
 import { Main, Wrapper, Text, Span, Button, Img } from "./Hero.styles.js";
 import Image from "next/image";
 
-function Hero({ menu }) {
+function Hero({ menu, setForm }) {
   return (
     <Container mode="light">
       <Main>
@@ -12,7 +12,9 @@ function Hero({ menu }) {
             <br />
             <Span>For free!</Span>
           </Text>
-          <Button menu={menu}>Delegate a task</Button>
+          <Button menu={menu} onClick={() => setForm(true)}>
+            Delegate a task
+          </Button>
         </Wrapper>
         <Img>
           <Image

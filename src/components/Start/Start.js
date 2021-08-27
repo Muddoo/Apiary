@@ -13,7 +13,7 @@ import {
 } from "./Start.styles";
 import Image from "next/image";
 
-function Start({ mode = "light" }) {
+function Start({ mode = "light", setForm }) {
   return (
     <Container mode={mode} id="start">
       <Main>
@@ -90,7 +90,7 @@ function Start({ mode = "light" }) {
             </CardBody>
           </Card>
         </CardsList>
-        <Button>Delegate a task</Button>
+        <Button onClick={() => setForm(true)}>Delegate a task</Button>
       </Main>
     </Container>
   );
