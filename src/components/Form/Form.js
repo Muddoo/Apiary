@@ -11,7 +11,7 @@ import {
   Button,
 } from "./Form.styles.js";
 
-function Form({ open, setForm }) {
+function Form({ open, setForm, setCallout }) {
   return (
     <Main open={open}>
       <Section onClick={(e) => e.target === e.currentTarget && setForm(false)}>
@@ -26,6 +26,7 @@ function Form({ open, setForm }) {
             onSubmit={(e) => {
               e.preventDefault();
               setForm(false);
+              setCallout(true);
             }}
           >
             <Wrapper>

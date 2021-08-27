@@ -7,6 +7,7 @@ import Start from "../components/Start/Start.js";
 import About from "../components/About/About.js";
 import Projects from "../components/Projects/Projects.js";
 import Form from "../components/Form/Form.js";
+import Callout from "../components/Callout/Callout.js";
 import { useState } from "react";
 // import dynamic from "next/dynamic";
 // const Hero = dynamic(import("../components/Hero/Hero.js"))
@@ -14,6 +15,7 @@ import { useState } from "react";
 export default function Home() {
   const [menu, setMenu] = useState(false);
   const [formVisible, setForm] = useState(false);
+  const [calloutVisible, setCallout] = useState(false);
 
   return (
     <div>
@@ -101,7 +103,8 @@ export default function Home() {
       <Projects setForm={setForm} />
       <Footer />
 
-      <Form open={formVisible} setForm={setForm} />
+      <Form open={formVisible} setForm={setForm} setCallout={setCallout} />
+      <Callout open={calloutVisible} setCallout={setCallout} />
     </div>
   );
 }

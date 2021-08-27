@@ -22,7 +22,7 @@ function Info({ title, subtitle, cards = [], mode, id }) {
       <Main>
         <Title mode={mode} dangerouslySetInnerHTML={createMarkup(title)} />
         <Subtitle mode={mode}> {subtitle} </Subtitle>
-        <CardsList>
+        <CardsList mode={mode}>
           {cards.map((card, i) => (
             <Card key={i} mode={mode} selected={card.selected}>
               <CardImg mode={mode}>

@@ -73,7 +73,7 @@ export const CardsList = styled.div`
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: ${(props) => (props.mode ? "32px" : "60px")};
   }
 `;
 
