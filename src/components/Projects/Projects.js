@@ -23,19 +23,25 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 
-function Projects({ setForm }) {
-  const [index, setIndex] = useState(0);
+function Projects({ setForm, title, i }) {
+  const [index, setIndex] = useState(i || 0);
 
   return (
     <Container mode="grey" id="projects">
       <Main>
         <Banner>
           <Wrapper>
-            <Title>Delegate tasks to those who enjoy&#160;them</Title>
-            <Text>
-              Check out the projects our students have done for companies in the
-              USA and beyond
-            </Text>
+            {title ? (
+              <Title>{title}</Title>
+            ) : (
+              <>
+                <Title>Delegate tasks to those who enjoy&#160;them</Title>
+                <Text>
+                  Check out the projects our students have done for companies in
+                  the USA and beyond
+                </Text>
+              </>
+            )}
           </Wrapper>
           <Img>
             <Image
@@ -47,27 +53,29 @@ function Projects({ setForm }) {
             />
           </Img>
         </Banner>
-        <BtnWrapper>
-          <Button
-            className={`${index === 0 && "selected"}`}
-            onClick={() => setIndex(0)}
-          >
-            Web development
-          </Button>
-          <Button
-            className={`${index === 1 && "selected"}`}
-            onClick={() => setIndex(1)}
-          >
-            Data analysis
-          </Button>
-          <Button
-            className={`${index === 2 && "selected"}`}
-            onClick={() => setIndex(2)}
-          >
-            Data science
-          </Button>
-        </BtnWrapper>
-        <ProjectsContainer>
+        {!i && (
+          <BtnWrapper>
+            <Button
+              className={`${index === 0 && "selected"}`}
+              onClick={() => setIndex(0)}
+            >
+              Web development
+            </Button>
+            <Button
+              className={`${index === 1 && "selected"}`}
+              onClick={() => setIndex(1)}
+            >
+              Data analysis
+            </Button>
+            <Button
+              className={`${index === 2 && "selected"}`}
+              onClick={() => setIndex(2)}
+            >
+              Data science
+            </Button>
+          </BtnWrapper>
+        )}
+        <ProjectsContainer i={i}>
           <ProjectsSlider index={index}>
             <List index={0} selected={index === 0}>
               <Project>

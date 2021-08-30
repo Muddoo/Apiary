@@ -259,11 +259,13 @@ export const ProjectsContainer = styled.div`
   display: block;
   width: 100%;
   overflow-x: hidden;
+  margin-top: ${props => props.i ? "80px" : 0};
 
   @media screen and (max-width: 768px) {
     transform: scale(1.045, 1);
     max-width: 470px;
     margin: auto;
+    margin-top: ${props => props.i ? "60px" : 0}
   }
 `;
 

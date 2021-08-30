@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Nav from "../components/Nav/Nav.js";
-import Footer from "../components/Footer/Footer.js";
+// import Footer from "../components/Footer/Footer.js";
 import Hero from "../components/Hero/Hero.js";
 import Info from "../components/Info/Info.js";
 import Start from "../components/Start/Start.js";
@@ -8,14 +8,18 @@ import About from "../components/About/About.js";
 import Projects from "../components/Projects/Projects.js";
 import Form from "../components/Form/Form.js";
 import Callout from "../components/Callout/Callout.js";
-import { useState } from "react";
+
+import Store from "../context";
+import { useContext, useEffect } from "react";
 // import dynamic from "next/dynamic";
 // const Hero = dynamic(import("../components/Hero/Hero.js"))
 
 export default function Home() {
-  const [menu, setMenu] = useState(false);
-  const [formVisible, setForm] = useState(false);
-  const [calloutVisible, setCallout] = useState(false);
+  const { menu, setMenu } = useContext(Store);
+  const { formVisible, setForm } = useContext(Store);
+  const { calloutVisible, setCallout } = useContext(Store);
+
+  useEffect(() => setMenu(false), []);
 
   return (
     <div>
@@ -59,18 +63,21 @@ export default function Home() {
             img: "/images/web.png",
             title: "Web development",
             text: "#programing",
+            link: "/web",
           },
           {
             selected: false,
             img: "/images/analysis.png",
             title: "Data analysis",
             text: "#analysis",
+            link: "/analysis",
           },
           {
             selected: false,
             img: "/images/science.png",
             title: "Data science",
             text: "#analysis",
+            link: "/science",
           },
         ]}
       />
@@ -101,7 +108,7 @@ export default function Home() {
         ]}
       />
       <Projects setForm={setForm} />
-      <Footer />
+      {/* <Footer /> */}
 
       <Form open={formVisible} setForm={setForm} setCallout={setCallout} />
       <Callout open={calloutVisible} setCallout={setCallout} />

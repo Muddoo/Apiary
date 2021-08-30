@@ -27,4 +27,6 @@
 //   },
 // });
 
-module.exports = {}
+module.exports = {
+  optimizeFonts: false,
+};
