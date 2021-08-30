@@ -71,7 +71,7 @@ export const Icon = styled.button`
     background-color: black;
     width: 100%;
     height: 2px;
-    top: ${props => props.menu ? "calc(50% - 1px)" : "calc(50% + 5px)"};
+    top: ${(props) => (props.menu ? "calc(50% - 1px)" : "calc(50% + 5px)")};
     transform: ${(props) => props.menu && "rotate(90deg)"};
     transform-origin: center;
     transition: all 0.4s;
@@ -93,6 +93,10 @@ export const Wrapper = styled.div`
     overflow: hidden;
     padding-bottom: ${(props) => (props.menu ? "106px" : 0)};
     transition: padding 0.1s;
+
+    &.sm {
+      padding-bottom: 56px;
+    }
   }
 `;
 
@@ -145,6 +149,12 @@ export const NavLink = styled.a`
     line-height: 39px;
     color: #000000;
   }
+
+  @media screen and (max-width: 400px) {
+    &.sm {
+      font-size: 30px;
+    }
+  }
 `;
 
 export const Button = styled.button`
@@ -175,12 +185,13 @@ export const Button = styled.button`
     background-color: #ff9900;
     top: 0;
     width: min(100%, 600px);
-    height: 70px;
+    height: ${(props) => (props.show ? "70px" : 0)};
     font-size: 24px;
     line-height: 32px;
     transform: ${(props) =>
       props.menu ? "translateY(0)" : "translateY(700%)"};
     transition: ${(props) => (props.menu ? "transform .8s" : "transform 0s")};
-    display: none;
+    opacity: ${(props) => (props.show ? 1 : 0)};
+    visibility: ${(props) => (props.show ? "visible" : "hidden")};
   }
 `;

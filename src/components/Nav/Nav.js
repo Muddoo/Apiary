@@ -12,7 +12,7 @@ import {
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-function Nav({ menu, isMenu, setForm }) {
+function Nav({ menu, isMenu, setForm, showButton }) {
   const { pathname } = useRouter();
 
   return (
@@ -25,7 +25,7 @@ function Nav({ menu, isMenu, setForm }) {
           menu={menu}
           onClick={() => isMenu(!menu)}
         />
-        <Wrapper menu={menu}>
+        <Wrapper menu={menu} className={`${pathname === "/" || "sm"}`}>
           {pathname === "/" ? (
             <NavList menu={menu}>
               <NavLink href="#help">We can help!</NavLink>
@@ -37,10 +37,14 @@ function Nav({ menu, isMenu, setForm }) {
           ) : (
             <NavList menu={menu}>
               <Link href="/">
-                <NavLink as="button">Back to homepage</NavLink>
+                <NavLink className="sm" as="button">
+                  Back to homepage
+                </NavLink>
               </Link>
               <Link href="#projects">
-                <NavLink as="button">Students’ projects</NavLink>
+                <NavLink className="sm" as="button">
+                  Students’ projects
+                </NavLink>
               </Link>
             </NavList>
           )}
@@ -48,6 +52,7 @@ function Nav({ menu, isMenu, setForm }) {
             type="button"
             aria-label="button"
             menu={menu}
+            show={showButton}
             onClick={() => setForm(true)}
           >
             Delegate a task

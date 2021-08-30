@@ -20,10 +20,16 @@ function Web() {
       <Head>
         <title>Apiary | Web</title>
       </Head>
-      <Nav isMenu={setMenu} menu={menu} setForm={setForm} />
-      <Banner title="What web&#160;development requests can we help with?" />
+      <Nav isMenu={setMenu} menu={menu} setForm={setForm} showButton={true} />
+      <Banner
+        title="What web&#160;development requests can we help with?"
+        text="Practicum by Yandex students are ready to build your website from
+              your design or if necessary, we can ask our colleagues from the
+              design team to create a unique design for your company and a
+              website based on this design."
+      />
       <Projects
-        i={1}
+        i={0}
         setForm={setForm}
         title="Check out the web development projects our students have done so far"
       />

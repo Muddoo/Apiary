@@ -2,23 +2,21 @@ import { Container } from "../Container/Container.styles.js";
 import { Main, Wrapper, Text, Img, List, Card } from "./Banner.styles.js";
 import Image from "next/image";
 
-function Banner({title}) {
-    function createMarkup(markup) {
-        return { __html: markup };
-      }
-    
+function Banner({ title, text }) {
+  function createMarkup(markup) {
+    return { __html: markup };
+  }
+
   return (
     <Container mode="light">
       <Main>
         <Wrapper>
           <Wrapper className="text">
             <Text dangerouslySetInnerHTML={createMarkup(title)} />
-            <Text className="medium">
-              Practicum by Yandex students are ready to build your website from
-              your design or if necessary, we can ask our colleagues from the
-              design team to create a unique design for your company and a
-              website based on this design.
-            </Text>
+            <Text
+              className="medium"
+              dangerouslySetInnerHTML={createMarkup(text)}
+            />
           </Wrapper>
           <Img>
             <Image
