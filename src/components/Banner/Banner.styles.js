@@ -163,7 +163,7 @@ export const Card = styled.div`
   padding: 30px 20px;
   display: grid;
   gap: 16px;
-  grid-template-rows: min-content 1fr 1fr;
+  grid-template-rows: min-content 1fr 1.75fr;
   justify-items: center;
   align-items: center;
 

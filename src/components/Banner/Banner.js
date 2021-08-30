@@ -31,7 +31,7 @@ function Banner({ title, text, src, cards }) {
         </Wrapper>
         <List>
           {cards.map((c, i) => (
-            <Card>
+            <Card key={i}>
               <Text className="large orange">{c.number}</Text>
               <Text className="sm center">{c.title}</Text>
               <Text className="xsm center">{c.text}</Text>
