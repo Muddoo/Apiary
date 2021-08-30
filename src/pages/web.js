@@ -27,9 +27,27 @@ function Web() {
               your design or if necessary, we can ask our colleagues from the
               design team to create a unique design for your company and a
               website based on this design."
+        src="/images/web.png"
+        cards={[
+          {
+            number: 1,
+            title: "Create a one page website from scratch",
+            text: "We can create a landing page for a new project or refresh an existing one",
+          },
+          {
+            number: 2,
+            title: "We make up your website design",
+            text: "If you already have a website design, we will gladly prepare an adaptive layout.",
+          },
+          {
+            number: 3,
+            title: "Let's create a complex multi-page website for the project",
+            text: "We are able to work on highly complex websites with deeply nested pages.",
+          },
+        ]}
       />
       <Projects
-        i={0}
+        i="0"
         setForm={setForm}
         title="Check out the web development projects our students have done so far"
       />
