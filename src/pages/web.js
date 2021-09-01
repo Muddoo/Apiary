@@ -12,6 +12,7 @@ function Web() {
   const { menu, setMenu } = useContext(Store);
   const { formVisible, setForm } = useContext(Store);
   const { calloutVisible, setCallout } = useContext(Store);
+  const { projects, setProjects } = useContext(Store);
 
   useEffect(() => setMenu(false), []);
 
@@ -48,6 +49,8 @@ function Web() {
       />
       <Projects
         i="0"
+        projects={projects}
+        setProjects={setProjects}
         setForm={setForm}
         title="Check out the web development projects our students have done so far"
       />

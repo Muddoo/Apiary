@@ -12,6 +12,7 @@ function Analysis() {
   const { menu, setMenu } = useContext(Store);
   const { formVisible, setForm } = useContext(Store);
   const { calloutVisible, setCallout } = useContext(Store);
+  const { projects, setProjects } = useContext(Store);
 
   useEffect(() => setMenu(false), []);
 
@@ -45,6 +46,8 @@ function Analysis() {
       />
       <Projects
         i={1}
+        projects={projects}
+        setProjects={setProjects}
         setForm={setForm}
         title="Check out the data analysis projects our students have done so far"
       />
