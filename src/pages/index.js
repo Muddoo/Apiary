@@ -11,15 +11,31 @@ import Callout from "../components/Callout/Callout.js";
 
 import Store from "../context";
 import { useContext, useEffect } from "react";
+
+import { createClient } from "contentful";
 // import dynamic from "next/dynamic";
 // const Hero = dynamic(import("../components/Hero/Hero.js"))
 
-export default function Home() {
+export default function Home({ projectss }) {
   const { menu, setMenu } = useContext(Store);
   const { formVisible, setForm } = useContext(Store);
   const { calloutVisible, setCallout } = useContext(Store);
+  const { projects, setProjects } = useContext(Store);
 
   useEffect(() => setMenu(false), []);
+  useEffect(() => setMenu(projects), []);
+  useEffect(() => setProjects(projectss), []);
+  // useEffect(() => {
+  //   (async function data() {
+  //     const client = createClient({
+  //       space: "zu5ddjasx2dw",
+  //       accessToken: "kBKxaKw3aowDBaCjhU2N9FcKrPGwEUBAVlsM1T4hRLI",
+  //     });
+  //     console.log(await (await client.getEntries()).items);
+  //   })();
+  // }, []);
+
+  console.log(projects);
 
   return (
     <div>
@@ -107,11 +123,33 @@ export default function Home() {
           },
         ]}
       />
-      <Projects setForm={setForm} />
+      <Projects setForm={setForm} projects={projects} setProjects={setProjects} />
       {/* <Footer /> */}
 
       <Form open={formVisible} setForm={setForm} setCallout={setCallout} />
       <Callout open={calloutVisible} setCallout={setCallout} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  // const { projects, setProjects } = useContext(Store);
+  const client = createClient({
+    space: "zu5ddjasx2dw",
+    accessToken: "kBKxaKw3aowDBaCjhU2N9FcKrPGwEUBAVlsM1T4hRLI",
+  });
+
+  const enteries = (await client.getEntries()).items[0]
+  const projectss = [];
+
+  for(let i = 0; i<6; i++) {
+    projectss.push(enteries)
+  }
+
+  return {
+    props: {
+      // projects: (await client.getEntries()).items,
+      projectss,
+    },
+  };
 }

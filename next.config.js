@@ -29,4 +29,7 @@
 
 module.exports = {
   // optimizeFonts: false,
+  images: {
+    domains: ["images.ctfassets.net"]
+  }
 };

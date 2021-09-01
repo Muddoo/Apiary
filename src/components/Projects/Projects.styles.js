@@ -113,7 +113,8 @@ export const Text = styled.p`
 
   &.member {
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: ${props => props.show ? "auto" : 6};
+    /* -webkit-line-clamp: 6; */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -22,9 +22,22 @@ import {
 } from "./Projects.styles.js";
 import Image from "next/image";
 import { useState } from "react";
+// import Store from "../../context";
 
-function Projects({ setForm, title, i }) {
+function Projects({ setForm, title, i, projects, setProjects }) {
   const [index, setIndex] = useState(i || 0);
+  const [showAll, setShow] = useState(false);
+  // const { Allprojects, setProjects } = useContext(Store);
+
+  function formatDate(date) {
+    const year = date.substring(0, 4);
+    const month = date.substring(5, 7) - 1;
+
+    return new Date(year, month).toLocaleDateString("en-US", {
+      month: "long",
+      year: "numeric",
+    });
+  }
 
   return (
     <Container mode="grey" id="projects">
@@ -690,7 +703,170 @@ function Projects({ setForm, title, i }) {
             </List>
 
             <List index={2} selected={index === 2}>
-              <Project>
+              {projects
+                .slice(0, showAll ? projects.length : 2)
+                .map(({ fields, sys }, i) => (
+                  <Project key={i}>
+                    <ProjectBanner>
+                      <Poster>
+                        <Image
+                          // src="/images/prim.png"
+                          src={`https:${fields.thumbnail.fields.file.url}`}
+                          alt="banner"
+                          layout="fill"
+                          //   priority="true"
+                          placeholder="blur"
+                          blurDataURL={`https:${fields.thumbnail.fields.file.url}`}
+                          //   objectFit="cover"
+                          //   objectPosition="center"
+                        />
+                      </Poster>
+                      <Details>
+                        <Title>{fields.title}</Title>
+                        <Wrapper className="text">
+                          {/* <Text className="medium">
+                          Landing page website for the company that cakes
+                          automated logistics robots from Oakland,&#160;CA
+                        </Text> */}
+                          {fields.description.content.map(({ content }, i) => (
+                            <Text key={i} className="medium">
+                              {content[0].value}
+                            </Text>
+                          ))}
+                        </Wrapper>
+                        <Text className="xsm">
+                          {formatDate(fields["date"])}
+                        </Text>
+                        {/* <Text className="xsm">May 2021</Text> */}
+                        <Text
+                          as="a"
+                          className="xsm orange right"
+                          href={fields.link}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Visit wbesite →
+                        </Text>
+                      </Details>
+                    </ProjectBanner>
+                    <Details className="member">
+                      <MemberWraper>
+                        <MemberImgWrapper>
+                          <MemberImg>
+                            <Image
+                              src={`https:${fields.clientImage.fields.file.url}`}
+                              // src="/images/client.png"
+                              alt="banner"
+                              layout="fill"
+                              placeholder="blur"
+                              blurDataURL={`https:${fields.clientImage.fields.file.url}`}
+                              //   priority="true"
+                            />
+                          </MemberImg>
+                        </MemberImgWrapper>
+                        <MemberInfoWrapper>
+                          <Title className="medium">
+                            {fields.clientInfo.name}
+                          </Title>
+                          <Text className="sm"> {fields.clientInfo.info} </Text>
+                        </MemberInfoWrapper>
+                      </MemberWraper>
+                      <Text className="medium member" show={fields.showClient}>
+                        {fields.clientReview}
+                      </Text>
+                      {/* <Text className="medium member">
+                      “The Data Analytics students have highlighted a few
+                      languages which show a growing demand for translation and
+                      expanded our list of keywords to detect more
+                      translation-related user reviews,” Demid said. “The Data
+                      Science students tested a wide range of natural language
+                      processing algorithms, including deep machine learning...
+                    </Text> */}
+                      <Text
+                        className="orange xsm"
+                        as="button"
+                        onClick={() => {
+                          setProjects(projects.map(p => p.sys.id === sys.id ? {...p, fields: {...fields, showClient: !fields.showClient}} : p))
+                        }}
+                      >
+                        {fields.showClient ? "Read less" : "Read full review"}
+                      </Text>
+                    </Details>
+                    <Details className="member">
+                      <MemberWraper>
+                        <MemberImgWrapper>
+                          {fields.studentsPics.map((p, i) => (
+                            <MemberImg key={i}>
+                              <Image
+                                //   priority="true"
+                                src={`https:${p.fields.file.url}`}
+                                // src="/images/client.png"
+                                alt="ant"
+                                layout="fill"
+                                placeholder="blur"
+                                blurDataURL="/images/ant.png"
+                                objectFit="cover"
+                                objectPosition="center"
+                              />
+                            </MemberImg>
+                          ))}
+                          {/* <MemberImg>
+                          <Image
+                            //   priority="true"
+                            src="/images/client.png"
+                            alt="ant"
+                            layout="fill"
+                            placeholder="blur"
+                            blurDataURL="/images/ant.png"
+                          />
+                        </MemberImg>
+                        <MemberImg>
+                          <Image
+                            //   priority="true"
+                            src="/images/prim.png"
+                            alt="ant"
+                            layout="fill"
+                            placeholder="blur"
+                            blurDataURL="/images/ant.png"
+                          />
+                        </MemberImg>
+                        <MemberImg>
+                          <Image
+                            //   priority="true"
+                            src="/images/client.png"
+                            alt="ant"
+                            layout="fill"
+                            placeholder="blur"
+                            blurDataURL="/images/ant.png"
+                          />
+                        </MemberImg> */}
+                        </MemberImgWrapper>
+                        <MemberInfoWrapper>
+                          <Title className="medium">Students team</Title>
+                          <Text className="sm">
+                            {/* Maria Wright, Maria Wright, Enyel Sequeira */}
+                            {fields.studentsInfo.join(", ")}
+                          </Text>
+                        </MemberInfoWrapper>
+                      </MemberWraper>
+                      <Text className="medium member">
+                        {fields.studentReview}
+                      </Text>
+                      {/* <Text className="medium member">
+                      “I learned so much from it,” Xia said. “Not just about new
+                      packages and methods of analysis and reporting, but also
+                      workflow management, how to clarify task requirements,
+                      collaborate with others, and more. Those are the kind of
+                      experiences I can put on my resume, and that’s awesome
+                      too.”
+                    </Text> */}
+                      <Text className="orange xsm" as="button">
+                        Read full review
+                      </Text>
+                    </Details>
+                  </Project>
+                ))}
+              {/* <Project>
                 <ProjectBanner>
                   <Poster>
                     <Image
@@ -801,9 +977,11 @@ function Projects({ setForm, title, i }) {
                     Read full review
                   </Text>
                 </Details>
-              </Project>
+              </Project> */}
               <BtnWrapper className="bottom">
-                <Button>More projects...</Button>
+                <Button onClick={() => setShow(!showAll)}>
+                  {showAll ? "Less projects" : "More projects..."}
+                </Button>
                 <Button className="selected" onClick={() => setForm(true)}>
                   Delegate a task
                 </Button>
