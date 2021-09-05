@@ -136,6 +136,7 @@ export const Text = styled.p`
 
   &.right {
     text-align: right;
+    white-space: nowrap;
   }
 
   @media screen and (max-width: 868px) {
