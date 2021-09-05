@@ -301,7 +301,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                             rel="noreferrer"
                             download
                           >
-                            Download presentation →
+                            Download presentation&#160;→
                           </Text>
                         </Details>
                       </ProjectBanner>
@@ -473,7 +473,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                             rel="noreferrer"
                             download
                           >
-                            Download presentation →
+                            Download presentation&#160;→
                           </Text>
                         </Details>
                       </ProjectBanner>
