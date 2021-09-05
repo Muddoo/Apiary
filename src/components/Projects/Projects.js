@@ -22,13 +22,10 @@ import {
 } from "./Projects.styles.js";
 import Image from "next/image";
 import { useState } from "react";
-// import Store from "../../context";
 
 function Projects({ setForm, title, i, projects, setProjects }) {
   const [index, setIndex] = useState(i || 0);
   const [showAll, setShow] = useState(false);
-  // const { Allprojects, setProjects } = useContext(Store);
-  // console.log(projects["science"]?.[0].studentReview.length)
 
   function formatDate(date) {
     const year = date.substring(0, 4);
@@ -128,7 +125,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           <Text
                             as="a"
                             className="xsm orange right"
-                            href={`https:${project.link?.fields.file.url}`}
+                            href={project.link}
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -175,7 +172,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           onClick={() => {
                             setProjects({
                               ...projects,
-                              science: projects["science"].map((p) =>
+                              web: projects["web"].map((p) =>
                                 p.id === project.id
                                   ? {
                                       ...p,
@@ -232,7 +229,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           onClick={() => {
                             setProjects({
                               ...projects,
-                              science: projects["science"].map((p) =>
+                              web: projects["web"].map((p) =>
                                 p.id === project.id
                                   ? {
                                       ...p,
@@ -253,7 +250,9 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                   ))}
               </Wrapper>
               <BtnWrapper className="bottom">
-                <Button>More projects...</Button>
+                <Button onClick={() => setShow(!showAll)}>
+                  {showAll ? "Less projects" : "More projects..."}
+                </Button>
                 <Button className="selected" onClick={() => setForm(true)}>
                   Delegate a task
                 </Button>
@@ -297,7 +296,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           <Text
                             as="a"
                             className="xsm orange right"
-                            href={`https:${project.link?.fields.file.url}`}
+                            href={`https:${project.file?.fields.file.url}`}
                             target="_blank"
                             rel="noreferrer"
                             download
@@ -345,7 +344,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           onClick={() => {
                             setProjects({
                               ...projects,
-                              science: projects["science"].map((p) =>
+                              science: projects["analysis"].map((p) =>
                                 p.id === project.id
                                   ? {
                                       ...p,
@@ -402,7 +401,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           onClick={() => {
                             setProjects({
                               ...projects,
-                              science: projects["science"].map((p) =>
+                              science: projects["analysis"].map((p) =>
                                 p.id === project.id
                                   ? {
                                       ...p,
@@ -423,7 +422,9 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                   ))}
               </Wrapper>
               <BtnWrapper className="bottom">
-                <Button>More projects...</Button>
+                <Button onClick={() => setShow(!showAll)}>
+                  {showAll ? "Less projects" : "More projects..."}
+                </Button>
                 <Button className="selected" onClick={() => setForm(true)}>
                   Delegate a task
                 </Button>
@@ -467,7 +468,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           <Text
                             as="a"
                             className="xsm orange right"
-                            href={`https:${project.link?.fields.file.url}`}
+                            href={`https:${project.file?.fields.file.url}`}
                             target="_blank"
                             rel="noreferrer"
                             download
