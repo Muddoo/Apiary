@@ -16,14 +16,13 @@ import { createClient } from "contentful";
 // import dynamic from "next/dynamic";
 // const Hero = dynamic(import("../components/Hero/Hero.js"))
 
-export default function Home({ items, projectsMap }) {
+export default function Home({ projectsMap }) {
   const { menu, setMenu } = useContext(Store);
   const { formVisible, setForm } = useContext(Store);
   const { calloutVisible, setCallout } = useContext(Store);
   const { projects, setProjects } = useContext(Store);
 
   useEffect(() => setMenu(false), []);
-  useEffect(() => setMenu(projects), []);
   useEffect(() => setProjects(projectsMap), []);
 
   return (
@@ -142,7 +141,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      items,
       projectsMap,
     },
   };

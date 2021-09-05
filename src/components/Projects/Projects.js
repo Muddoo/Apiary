@@ -32,7 +32,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
     const month = date.substring(5, 7) - 1;
 
     return new Date(year, month).toLocaleDateString("en-US", {
-      month: "long",
+      month: "short",
       year: "numeric",
     });
   }
