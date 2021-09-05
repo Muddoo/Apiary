@@ -344,7 +344,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           onClick={() => {
                             setProjects({
                               ...projects,
-                              science: projects["analysis"].map((p) =>
+                              analysis: projects["analysis"].map((p) =>
                                 p.id === project.id
                                   ? {
                                       ...p,
@@ -401,7 +401,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
                           onClick={() => {
                             setProjects({
                               ...projects,
-                              science: projects["analysis"].map((p) =>
+                              analysis: projects["analysis"].map((p) =>
                                 p.id === project.id
                                   ? {
                                       ...p,
