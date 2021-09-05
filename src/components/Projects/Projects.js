@@ -28,6 +28,7 @@ function Projects({ setForm, title, i, projects, setProjects }) {
   const [index, setIndex] = useState(i || 0);
   const [showAll, setShow] = useState(false);
   // const { Allprojects, setProjects } = useContext(Store);
+  // console.log(projects["science"]?.[0].studentReview.length)
 
   function formatDate(date) {
     const year = date.substring(0, 4);
@@ -91,243 +92,166 @@ function Projects({ setForm, title, i, projects, setProjects }) {
         <ProjectsContainer i={i}>
           <ProjectsSlider index={index}>
             <List index={0} selected={index == 0}>
-              <Project>
-                <ProjectBanner>
-                  <Poster>
-                    <Image
-                      src="/images/ant.png"
-                      alt="banner"
-                      layout="fill"
-                      //   priority="true"
-                      placeholder="blur"
-                      blurDataURL="/images/ant.png"
-                      //   objectFit="cover"
-                      //   objectPosition="center"
-                    />
-                  </Poster>
-                  <Details>
-                    <Title>Ant Robotics</Title>
-                    <Wrapper className="text">
-                      <Text className="medium">
-                        Landing page website for the company that cakes
-                        automated logistics robots from Oakland,&#160;CA
-                      </Text>
-                    </Wrapper>
-                    <Text className="xsm">May 2021</Text>
-                    <Text
-                      as="a"
-                      className="xsm orange right"
-                      href="https://unruffled-goldwasser-636557.netlify.app/"
-                      target="_blank"
-                      rel="noreferrer"
+              <Wrapper className="projects">
+                {projects["web"] &&
+                  projects["web"].map((project, i) => (
+                    <Project
+                      key={project.id}
+                      index={i === 0 || i === 1 ? 0 : i}
+                      show={showAll}
                     >
-                      Visit wbesite →
-                    </Text>
-                  </Details>
-                </ProjectBanner>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          src="/images/client.png"
-                          alt="banner"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/client.png"
-                          //   priority="true"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Maxim Antonenko</Title>
-                      <Text className="sm">Ant Robotics CEO</Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “The Data Analytics students have highlighted a few
-                    languages which show a growing demand for translation and
-                    expanded our list of keywords to detect more
-                    translation-related user reviews,” Demid said. “The Data
-                    Science students tested a wide range of natural language
-                    processing algorithms, including deep machine learning...
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/prim.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Students team</Title>
-                      <Text className="sm">
-                        Maria Wright, Maria Wright, Enyel Sequeira
-                      </Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “I learned so much from it,” Xia said. “Not just about new
-                    packages and methods of analysis and reporting, but also
-                    workflow management, how to clarify task requirements,
-                    collaborate with others, and more. Those are the kind of
-                    experiences I can put on my resume, and that’s awesome too.”
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-              </Project>
-
-              <Project>
-                <ProjectBanner>
-                  <Poster>
-                    <Image
-                      src="/images/prim.png"
-                      alt="banner"
-                      layout="fill"
-                      //   priority="true"
-                      placeholder="blur"
-                      blurDataURL="/images/prim.png"
-                      //   objectFit="cover"
-                      //   objectPosition="center"
-                    />
-                  </Poster>
-                  <Details>
-                    <Title>Ant Robotics</Title>
-                    <Wrapper className="text">
-                      <Text className="medium">
-                        Landing page website for the company that cakes
-                        automated logistics robots from Oakland,&#160;CA
-                      </Text>
-                    </Wrapper>
-                    <Text className="xsm">May 2021</Text>
-                    <Text
-                      as="a"
-                      className="xsm orange right"
-                      href="https://prim-u-izin0qdwo-muddoo.vercel.app/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Visit wbesite →
-                    </Text>
-                  </Details>
-                </ProjectBanner>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          src="/images/client.png"
-                          alt="banner"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/client.png"
-                          //   priority="true"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Maxim Antonenko</Title>
-                      <Text className="sm">Ant Robotics CEO</Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “The Data Analytics students have highlighted a few
-                    languages which show a growing demand for translation and
-                    expanded our list of keywords to detect more
-                    translation-related user reviews,” Demid said. “The Data
-                    Science students tested a wide range of natural language
-                    processing algorithms, including deep machine learning...
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/prim.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Students team</Title>
-                      <Text className="sm">
-                        Maria Wright, Maria Wright, Enyel Sequeira
-                      </Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “I learned so much from it,” Xia said. “Not just about new
-                    packages and methods of analysis and reporting, but also
-                    workflow management, how to clarify task requirements,
-                    collaborate with others, and more. Those are the kind of
-                    experiences I can put on my resume, and that’s awesome too.”
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-              </Project>
+                      <ProjectBanner>
+                        <Poster>
+                          <Image
+                            src={`https:${project.thumbnail.fields.file.url}`}
+                            alt="banner"
+                            layout="fill"
+                            priority="true"
+                            placeholder="blur"
+                            blurDataURL={`https:${project.thumbnail.fields.file.url}`}
+                          />
+                        </Poster>
+                        <Details>
+                          <Title>{project.title}</Title>
+                          <Wrapper className="text">
+                            {project.description.content.map(
+                              ({ content }, i) => (
+                                <Text key={i} className="medium">
+                                  {content[0].value}
+                                </Text>
+                              )
+                            )}
+                          </Wrapper>
+                          <Text className="xsm">
+                            {formatDate(project["date"])}
+                          </Text>
+                          <Text
+                            as="a"
+                            className="xsm orange right"
+                            href={`https:${project.link?.fields.file.url}`}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Visit wbesite →
+                          </Text>
+                        </Details>
+                      </ProjectBanner>
+                      <Details
+                        className="member"
+                        show={project.showClientReview}
+                      >
+                        <MemberWraper>
+                          <MemberImgWrapper>
+                            <MemberImg>
+                              <Image
+                                src={`https:${project.clientImage.fields.file.url}`}
+                                alt="banner"
+                                layout="fill"
+                                placeholder="blur"
+                                blurDataURL={`https:${project.clientImage.fields.file.url}`}
+                              />
+                            </MemberImg>
+                          </MemberImgWrapper>
+                          <MemberInfoWrapper>
+                            <Title className="medium">
+                              {project.clientInfo.name}
+                            </Title>
+                            <Text className="sm">
+                              {project.clientInfo.info}
+                            </Text>
+                          </MemberInfoWrapper>
+                        </MemberWraper>
+                        <Text
+                          className="medium member"
+                          show={project.showClientReview}
+                        >
+                          {project.showClientReview
+                            ? project.clientReview
+                            : `${project.clientReview.substring(0, 194)}..."`}
+                        </Text>
+                        <Text
+                          className="orange xsm"
+                          as="button"
+                          onClick={() => {
+                            setProjects({
+                              ...projects,
+                              science: projects["science"].map((p) =>
+                                p.id === project.id
+                                  ? {
+                                      ...p,
+                                      showClientReview: !p.showClientReview,
+                                    }
+                                  : p
+                              ),
+                            });
+                          }}
+                        >
+                          {project.showClientReview
+                            ? "Read less"
+                            : "Read full review"}
+                        </Text>
+                      </Details>
+                      <Details
+                        className="member"
+                        show={project.showStudentReview}
+                      >
+                        <MemberWraper>
+                          <MemberImgWrapper>
+                            {project.studentsPics.map((p, i) => (
+                              <MemberImg key={i}>
+                                <Image
+                                  src={`https:${p.fields.file.url}`}
+                                  alt="ant"
+                                  layout="fill"
+                                  placeholder="blur"
+                                  blurDataURL={`https:${p.fields.file.url}`}
+                                  objectFit="cover"
+                                  objectPosition="center"
+                                />
+                              </MemberImg>
+                            ))}
+                          </MemberImgWrapper>
+                          <MemberInfoWrapper>
+                            <Title className="medium">Students&#160;team</Title>
+                            <Text className="sm">
+                              {project.studentsInfo.join(", ")}
+                            </Text>
+                          </MemberInfoWrapper>
+                        </MemberWraper>
+                        <Text
+                          className="medium member"
+                          show={project.showStudentReview}
+                        >
+                          {project.showStudentReview
+                            ? project.studentReview
+                            : `${project.studentReview.substring(0, 194)}..."`}
+                        </Text>
+                        <Text
+                          className="orange xsm"
+                          as="button"
+                          onClick={() => {
+                            setProjects({
+                              ...projects,
+                              science: projects["science"].map((p) =>
+                                p.id === project.id
+                                  ? {
+                                      ...p,
+                                      showStudentReview: !p.showStudentReview,
+                                    }
+                                  : p
+                              ),
+                            });
+                          }}
+                        >
+                          {project.studentReview.length > 194 &&
+                            (project.showStudentReview
+                              ? "Read less"
+                              : "Read full review")}
+                        </Text>
+                      </Details>
+                    </Project>
+                  ))}
+              </Wrapper>
               <BtnWrapper className="bottom">
                 <Button>More projects...</Button>
                 <Button className="selected" onClick={() => setForm(true)}>
@@ -337,363 +261,167 @@ function Projects({ setForm, title, i, projects, setProjects }) {
             </List>
 
             <List index={1} selected={index === 1}>
-              <Project>
-                <ProjectBanner>
-                  <Poster>
-                    <Image
-                      src="/images/norbu.png"
-                      alt="norbu"
-                      layout="fill"
-                      //   priority="true"
-                      placeholder="blur"
-                      blurDataURL="/images/prim.png"
-                      //   objectFit="cover"
-                      //   objectPosition="center"
-                    />
-                  </Poster>
-                  <Details>
-                    <Title>Norbu, DA</Title>
-                    <Wrapper className="text">
-                      <Text className="medium">
-                        Norbu Stress Control is the first anti-stress app that
-                        teaches to manage stress and emotions on the physical
-                        level.
-                      </Text>
-                      <Text className="medium">
-                        Task: to calculate main product metrics, research
-                        possible reasons for users behaviour such as retention,
-                        payments, app removal, etc. and analyze User journey
-                        behaviour.
-                      </Text>
-                    </Wrapper>
-                    <Text className="xsm">May 2021</Text>
-                    <Text as="a" className="xsm orange right">
-                      Visit wbesite →
-                    </Text>
-                  </Details>
-                </ProjectBanner>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          src="/images/client.png"
-                          alt="banner"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/client.png"
-                          //   priority="true"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Maxim Antonenko</Title>
-                      <Text className="sm">Ant Robotics CEO</Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “The Data Analytics students have highlighted a few
-                    languages which show a growing demand for translation and
-                    expanded our list of keywords to detect more
-                    translation-related user reviews,” Demid said. “The Data
-                    Science students tested a wide range of natural language
-                    processing algorithms, including deep machine learning...
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/prim.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Students team</Title>
-                      <Text className="sm">
-                        Maria Wright, Maria Wright, Enyel Sequeira
-                      </Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “I learned so much from it,” Xia said. “Not just about new
-                    packages and methods of analysis and reporting, but also
-                    workflow management, how to clarify task requirements,
-                    collaborate with others, and more. Those are the kind of
-                    experiences I can put on my resume, and that’s awesome too.”
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-              </Project>
-
-              <Project>
-                <ProjectBanner>
-                  <Poster>
-                    <Image
-                      src="/images/norbu.png"
-                      alt="norbu"
-                      layout="fill"
-                      //   priority="true"
-                      placeholder="blur"
-                      blurDataURL="/images/prim.png"
-                      //   objectFit="cover"
-                      //   objectPosition="center"
-                    />
-                  </Poster>
-                  <Details>
-                    <Title>Norbu, DA</Title>
-                    <Wrapper className="text">
-                      <Text className="medium">
-                        Norbu Stress Control is the first anti-stress app that
-                        teaches to manage stress and emotions on the physical
-                        level.
-                      </Text>
-                      <Text className="medium">
-                        Task: to calculate main product metrics, research
-                        possible reasons for users behaviour such as retention,
-                        payments, app removal, etc. and analyze User journey
-                        behaviour.
-                      </Text>
-                    </Wrapper>
-                    <Text className="xsm">May 2021</Text>
-                    <Text as="a" className="xsm orange right">
-                      Visit wbesite →
-                    </Text>
-                  </Details>
-                </ProjectBanner>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          src="/images/client.png"
-                          alt="banner"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/client.png"
-                          //   priority="true"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Maxim Antonenko</Title>
-                      <Text className="sm">Ant Robotics CEO</Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “The Data Analytics students have highlighted a few
-                    languages which show a growing demand for translation and
-                    expanded our list of keywords to detect more
-                    translation-related user reviews,” Demid said. “The Data
-                    Science students tested a wide range of natural language
-                    processing algorithms, including deep machine learning...
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/prim.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Students team</Title>
-                      <Text className="sm">
-                        Maria Wright, Maria Wright, Enyel Sequeira
-                      </Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “I learned so much from it,” Xia said. “Not just about new
-                    packages and methods of analysis and reporting, but also
-                    workflow management, how to clarify task requirements,
-                    collaborate with others, and more. Those are the kind of
-                    experiences I can put on my resume, and that’s awesome too.”
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-              </Project>
-
-              <Project>
-                <ProjectBanner>
-                  <Poster>
-                    <Image
-                      src="/images/correct.png"
-                      alt="correct"
-                      layout="fill"
-                      //   priority="true"
-                      placeholder="blur"
-                      blurDataURL="/images/ant.png"
-                      //   objectFit="cover"
-                      //   objectPosition="center"
-                    />
-                  </Poster>
-                  <Details>
-                    <Title>Allcorrect, DS</Title>
-                    <Wrapper className="text">
-                      <Text className="medium">
-                        Allcorrect Games provides video game localization,
-                        localization testing, voiceovers, game art, and playable
-                        ads.
-                      </Text>
-                      <Text className="medium">
-                        Task: to analyze apps reviews about localization quality
-                        on marketplaces like App Store / Google Play / Steam.
-                      </Text>
-                    </Wrapper>
-                    <Text className="xsm">May 2021</Text>
-                    <Text as="a" className="xsm orange right">
-                      Visit wbesite →
-                    </Text>
-                  </Details>
-                </ProjectBanner>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          src="/images/client.png"
-                          alt="banner"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/client.png"
-                          //   priority="true"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Maxim Antonenko</Title>
-                      <Text className="sm">Ant Robotics CEO</Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “The Data Analytics students have highlighted a few
-                    languages which show a growing demand for translation and
-                    expanded our list of keywords to detect more
-                    translation-related user reviews,” Demid said. “The Data
-                    Science students tested a wide range of natural language
-                    processing algorithms, including deep machine learning...
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/prim.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Students team</Title>
-                      <Text className="sm">
-                        Maria Wright, Maria Wright, Enyel Sequeira
-                      </Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “I learned so much from it,” Xia said. “Not just about new
-                    packages and methods of analysis and reporting, but also
-                    workflow management, how to clarify task requirements,
-                    collaborate with others, and more. Those are the kind of
-                    experiences I can put on my resume, and that’s awesome too.”
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-              </Project>
+              <Wrapper className="projects">
+                {projects["analysis"] &&
+                  projects["analysis"].map((project, i) => (
+                    <Project
+                      key={project.id}
+                      index={i === 0 || i === 1 ? 0 : i}
+                      show={showAll}
+                    >
+                      <ProjectBanner>
+                        <Poster>
+                          <Image
+                            src={`https:${project.thumbnail.fields.file.url}`}
+                            alt="banner"
+                            layout="fill"
+                            priority="true"
+                            placeholder="blur"
+                            blurDataURL={`https:${project.thumbnail.fields.file.url}`}
+                          />
+                        </Poster>
+                        <Details>
+                          <Title>{project.title}</Title>
+                          <Wrapper className="text">
+                            {project.description.content.map(
+                              ({ content }, i) => (
+                                <Text key={i} className="medium">
+                                  {content[0].value}
+                                </Text>
+                              )
+                            )}
+                          </Wrapper>
+                          <Text className="xsm">
+                            {formatDate(project["date"])}
+                          </Text>
+                          <Text
+                            as="a"
+                            className="xsm orange right"
+                            href={`https:${project.link?.fields.file.url}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            download
+                          >
+                            Download presentation →
+                          </Text>
+                        </Details>
+                      </ProjectBanner>
+                      <Details
+                        className="member"
+                        show={project.showClientReview}
+                      >
+                        <MemberWraper>
+                          <MemberImgWrapper>
+                            <MemberImg>
+                              <Image
+                                src={`https:${project.clientImage.fields.file.url}`}
+                                alt="banner"
+                                layout="fill"
+                                placeholder="blur"
+                                blurDataURL={`https:${project.clientImage.fields.file.url}`}
+                              />
+                            </MemberImg>
+                          </MemberImgWrapper>
+                          <MemberInfoWrapper>
+                            <Title className="medium">
+                              {project.clientInfo.name}
+                            </Title>
+                            <Text className="sm">
+                              {project.clientInfo.info}
+                            </Text>
+                          </MemberInfoWrapper>
+                        </MemberWraper>
+                        <Text
+                          className="medium member"
+                          show={project.showClientReview}
+                        >
+                          {project.showClientReview
+                            ? project.clientReview
+                            : `${project.clientReview.substring(0, 194)}..."`}
+                        </Text>
+                        <Text
+                          className="orange xsm"
+                          as="button"
+                          onClick={() => {
+                            setProjects({
+                              ...projects,
+                              science: projects["science"].map((p) =>
+                                p.id === project.id
+                                  ? {
+                                      ...p,
+                                      showClientReview: !p.showClientReview,
+                                    }
+                                  : p
+                              ),
+                            });
+                          }}
+                        >
+                          {project.showClientReview
+                            ? "Read less"
+                            : "Read full review"}
+                        </Text>
+                      </Details>
+                      <Details
+                        className="member"
+                        show={project.showStudentReview}
+                      >
+                        <MemberWraper>
+                          <MemberImgWrapper>
+                            {project.studentsPics.map((p, i) => (
+                              <MemberImg key={i}>
+                                <Image
+                                  src={`https:${p.fields.file.url}`}
+                                  alt="ant"
+                                  layout="fill"
+                                  placeholder="blur"
+                                  blurDataURL={`https:${p.fields.file.url}`}
+                                  objectFit="cover"
+                                  objectPosition="center"
+                                />
+                              </MemberImg>
+                            ))}
+                          </MemberImgWrapper>
+                          <MemberInfoWrapper>
+                            <Title className="medium">Students&#160;team</Title>
+                            <Text className="sm">
+                              {project.studentsInfo.join(", ")}
+                            </Text>
+                          </MemberInfoWrapper>
+                        </MemberWraper>
+                        <Text
+                          className="medium member"
+                          show={project.showStudentReview}
+                        >
+                          {project.showStudentReview
+                            ? project.studentReview
+                            : `${project.studentReview.substring(0, 194)}..."`}
+                        </Text>
+                        <Text
+                          className="orange xsm"
+                          as="button"
+                          onClick={() => {
+                            setProjects({
+                              ...projects,
+                              science: projects["science"].map((p) =>
+                                p.id === project.id
+                                  ? {
+                                      ...p,
+                                      showStudentReview: !p.showStudentReview,
+                                    }
+                                  : p
+                              ),
+                            });
+                          }}
+                        >
+                          {project.studentReview.length > 194 &&
+                            (project.showStudentReview
+                              ? "Read less"
+                              : "Read full review")}
+                        </Text>
+                      </Details>
+                    </Project>
+                  ))}
+              </Wrapper>
               <BtnWrapper className="bottom">
                 <Button>More projects...</Button>
                 <Button className="selected" onClick={() => setForm(true)}>
@@ -703,281 +431,167 @@ function Projects({ setForm, title, i, projects, setProjects }) {
             </List>
 
             <List index={2} selected={index === 2}>
-              {projects
-                .slice(0, showAll ? projects.length : 2)
-                .map(({ fields, sys }, i) => (
-                  <Project key={i}>
-                    <ProjectBanner>
-                      <Poster>
-                        <Image
-                          // src="/images/prim.png"
-                          src={`https:${fields.thumbnail.fields.file.url}`}
-                          alt="banner"
-                          layout="fill"
-                          //   priority="true"
-                          placeholder="blur"
-                          blurDataURL={`https:${fields.thumbnail.fields.file.url}`}
-                          //   objectFit="cover"
-                          //   objectPosition="center"
-                        />
-                      </Poster>
-                      <Details>
-                        <Title>{fields.title}</Title>
-                        <Wrapper className="text">
-                          {/* <Text className="medium">
-                          Landing page website for the company that cakes
-                          automated logistics robots from Oakland,&#160;CA
-                        </Text> */}
-                          {fields.description.content.map(({ content }, i) => (
-                            <Text key={i} className="medium">
-                              {content[0].value}
-                            </Text>
-                          ))}
-                        </Wrapper>
-                        <Text className="xsm">
-                          {formatDate(fields["date"])}
-                        </Text>
-                        {/* <Text className="xsm">May 2021</Text> */}
-                        <Text
-                          as="a"
-                          className="xsm orange right"
-                          href={fields.link}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Visit wbesite →
-                        </Text>
-                      </Details>
-                    </ProjectBanner>
-                    <Details className="member">
-                      <MemberWraper>
-                        <MemberImgWrapper>
-                          <MemberImg>
-                            <Image
-                              src={`https:${fields.clientImage.fields.file.url}`}
-                              // src="/images/client.png"
-                              alt="banner"
-                              layout="fill"
-                              placeholder="blur"
-                              blurDataURL={`https:${fields.clientImage.fields.file.url}`}
-                              //   priority="true"
-                            />
-                          </MemberImg>
-                        </MemberImgWrapper>
-                        <MemberInfoWrapper>
-                          <Title className="medium">
-                            {fields.clientInfo.name}
-                          </Title>
-                          <Text className="sm"> {fields.clientInfo.info} </Text>
-                        </MemberInfoWrapper>
-                      </MemberWraper>
-                      <Text className="medium member" show={fields.showClient}>
-                        {fields.clientReview}
-                      </Text>
-                      {/* <Text className="medium member">
-                      “The Data Analytics students have highlighted a few
-                      languages which show a growing demand for translation and
-                      expanded our list of keywords to detect more
-                      translation-related user reviews,” Demid said. “The Data
-                      Science students tested a wide range of natural language
-                      processing algorithms, including deep machine learning...
-                    </Text> */}
-                      <Text
-                        className="orange xsm"
-                        as="button"
-                        onClick={() => {
-                          setProjects(projects.map(p => p.sys.id === sys.id ? {...p, fields: {...fields, showClient: !fields.showClient}} : p))
-                        }}
+              <Wrapper className="projects">
+                {projects["science"] &&
+                  projects["science"].map((project, i) => (
+                    <Project
+                      key={project.id}
+                      index={i === 0 || i === 1 ? 0 : i}
+                      show={showAll}
+                    >
+                      <ProjectBanner>
+                        <Poster>
+                          <Image
+                            src={`https:${project.thumbnail.fields.file.url}`}
+                            alt="banner"
+                            layout="fill"
+                            priority="true"
+                            placeholder="blur"
+                            blurDataURL={`https:${project.thumbnail.fields.file.url}`}
+                          />
+                        </Poster>
+                        <Details>
+                          <Title>{project.title}</Title>
+                          <Wrapper className="text">
+                            {project.description.content.map(
+                              ({ content }, i) => (
+                                <Text key={i} className="medium">
+                                  {content[0].value}
+                                </Text>
+                              )
+                            )}
+                          </Wrapper>
+                          <Text className="xsm">
+                            {formatDate(project["date"])}
+                          </Text>
+                          <Text
+                            as="a"
+                            className="xsm orange right"
+                            href={`https:${project.link?.fields.file.url}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            download
+                          >
+                            Download presentation →
+                          </Text>
+                        </Details>
+                      </ProjectBanner>
+                      <Details
+                        className="member"
+                        show={project.showClientReview}
                       >
-                        {fields.showClient ? "Read less" : "Read full review"}
-                      </Text>
-                    </Details>
-                    <Details className="member">
-                      <MemberWraper>
-                        <MemberImgWrapper>
-                          {fields.studentsPics.map((p, i) => (
-                            <MemberImg key={i}>
+                        <MemberWraper>
+                          <MemberImgWrapper>
+                            <MemberImg>
                               <Image
-                                //   priority="true"
-                                src={`https:${p.fields.file.url}`}
-                                // src="/images/client.png"
-                                alt="ant"
+                                src={`https:${project.clientImage.fields.file.url}`}
+                                alt="banner"
                                 layout="fill"
                                 placeholder="blur"
-                                blurDataURL="/images/ant.png"
-                                objectFit="cover"
-                                objectPosition="center"
+                                blurDataURL={`https:${project.clientImage.fields.file.url}`}
                               />
                             </MemberImg>
-                          ))}
-                          {/* <MemberImg>
-                          <Image
-                            //   priority="true"
-                            src="/images/client.png"
-                            alt="ant"
-                            layout="fill"
-                            placeholder="blur"
-                            blurDataURL="/images/ant.png"
-                          />
-                        </MemberImg>
-                        <MemberImg>
-                          <Image
-                            //   priority="true"
-                            src="/images/prim.png"
-                            alt="ant"
-                            layout="fill"
-                            placeholder="blur"
-                            blurDataURL="/images/ant.png"
-                          />
-                        </MemberImg>
-                        <MemberImg>
-                          <Image
-                            //   priority="true"
-                            src="/images/client.png"
-                            alt="ant"
-                            layout="fill"
-                            placeholder="blur"
-                            blurDataURL="/images/ant.png"
-                          />
-                        </MemberImg> */}
-                        </MemberImgWrapper>
-                        <MemberInfoWrapper>
-                          <Title className="medium">Students team</Title>
-                          <Text className="sm">
-                            {/* Maria Wright, Maria Wright, Enyel Sequeira */}
-                            {fields.studentsInfo.join(", ")}
-                          </Text>
-                        </MemberInfoWrapper>
-                      </MemberWraper>
-                      <Text className="medium member">
-                        {fields.studentReview}
-                      </Text>
-                      {/* <Text className="medium member">
-                      “I learned so much from it,” Xia said. “Not just about new
-                      packages and methods of analysis and reporting, but also
-                      workflow management, how to clarify task requirements,
-                      collaborate with others, and more. Those are the kind of
-                      experiences I can put on my resume, and that’s awesome
-                      too.”
-                    </Text> */}
-                      <Text className="orange xsm" as="button">
-                        Read full review
-                      </Text>
-                    </Details>
-                  </Project>
-                ))}
-              {/* <Project>
-                <ProjectBanner>
-                  <Poster>
-                    <Image
-                      src="/images/prim.png"
-                      alt="banner"
-                      layout="fill"
-                      //   priority="true"
-                      placeholder="blur"
-                      blurDataURL="/images/prim.png"
-                      //   objectFit="cover"
-                      //   objectPosition="center"
-                    />
-                  </Poster>
-                  <Details>
-                    <Title>Ant Robotics</Title>
-                    <Wrapper className="text">
-                      <Text className="medium">
-                        Landing page website for the company that cakes
-                        automated logistics robots from Oakland,&#160;CA
-                      </Text>
-                    </Wrapper>
-                    <Text className="xsm">May 2021</Text>
-                    <Text as="a" className="xsm orange right">
-                      Visit wbesite →
-                    </Text>
-                  </Details>
-                </ProjectBanner>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          src="/images/client.png"
-                          alt="banner"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/client.png"
-                          //   priority="true"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Maxim Antonenko</Title>
-                      <Text className="sm">Ant Robotics CEO</Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “The Data Analytics students have highlighted a few
-                    languages which show a growing demand for translation and
-                    expanded our list of keywords to detect more
-                    translation-related user reviews,” Demid said. “The Data
-                    Science students tested a wide range of natural language
-                    processing algorithms, including deep machine learning...
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-                <Details className="member">
-                  <MemberWraper>
-                    <MemberImgWrapper>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/prim.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                      <MemberImg>
-                        <Image
-                          //   priority="true"
-                          src="/images/client.png"
-                          alt="ant"
-                          layout="fill"
-                          placeholder="blur"
-                          blurDataURL="/images/ant.png"
-                        />
-                      </MemberImg>
-                    </MemberImgWrapper>
-                    <MemberInfoWrapper>
-                      <Title className="medium">Students team</Title>
-                      <Text className="sm">
-                        Maria Wright, Maria Wright, Enyel Sequeira
-                      </Text>
-                    </MemberInfoWrapper>
-                  </MemberWraper>
-                  <Text className="medium member">
-                    “I learned so much from it,” Xia said. “Not just about new
-                    packages and methods of analysis and reporting, but also
-                    workflow management, how to clarify task requirements,
-                    collaborate with others, and more. Those are the kind of
-                    experiences I can put on my resume, and that’s awesome too.”
-                  </Text>
-                  <Text className="orange xsm" as="button">
-                    Read full review
-                  </Text>
-                </Details>
-              </Project> */}
+                          </MemberImgWrapper>
+                          <MemberInfoWrapper>
+                            <Title className="medium">
+                              {project.clientInfo.name}
+                            </Title>
+                            <Text className="sm">
+                              {project.clientInfo.info}
+                            </Text>
+                          </MemberInfoWrapper>
+                        </MemberWraper>
+                        <Text
+                          className="medium member"
+                          show={project.showClientReview}
+                        >
+                          {project.showClientReview
+                            ? project.clientReview
+                            : `${project.clientReview.substring(0, 194)}..."`}
+                        </Text>
+                        <Text
+                          className="orange xsm"
+                          as="button"
+                          onClick={() => {
+                            setProjects({
+                              ...projects,
+                              science: projects["science"].map((p) =>
+                                p.id === project.id
+                                  ? {
+                                      ...p,
+                                      showClientReview: !p.showClientReview,
+                                    }
+                                  : p
+                              ),
+                            });
+                          }}
+                        >
+                          {project.showClientReview
+                            ? "Read less"
+                            : "Read full review"}
+                        </Text>
+                      </Details>
+                      <Details
+                        className="member"
+                        show={project.showStudentReview}
+                      >
+                        <MemberWraper>
+                          <MemberImgWrapper>
+                            {project.studentsPics.map((p, i) => (
+                              <MemberImg key={i}>
+                                <Image
+                                  src={`https:${p.fields.file.url}`}
+                                  alt="ant"
+                                  layout="fill"
+                                  placeholder="blur"
+                                  blurDataURL="/images/ant.png"
+                                  objectFit="cover"
+                                  objectPosition="center"
+                                />
+                              </MemberImg>
+                            ))}
+                          </MemberImgWrapper>
+                          <MemberInfoWrapper>
+                            <Title className="medium">Students&#160;team</Title>
+                            <Text className="sm">
+                              {project.studentsInfo.join(", ")}
+                            </Text>
+                          </MemberInfoWrapper>
+                        </MemberWraper>
+                        <Text
+                          className="medium member"
+                          show={project.showStudentReview}
+                        >
+                          {project.showStudentReview
+                            ? project.studentReview
+                            : `${project.studentReview.substring(0, 194)}..."`}
+                        </Text>
+                        <Text
+                          className="orange xsm"
+                          as="button"
+                          onClick={() => {
+                            setProjects({
+                              ...projects,
+                              science: projects["science"].map((p) =>
+                                p.id === project.id
+                                  ? {
+                                      ...p,
+                                      showStudentReview: !p.showStudentReview,
+                                    }
+                                  : p
+                              ),
+                            });
+                          }}
+                        >
+                          {project.studentReview.length > 194 &&
+                            (project.showStudentReview
+                              ? "Read less"
+                              : "Read full review")}
+                        </Text>
+                      </Details>
+                    </Project>
+                  ))}
+              </Wrapper>
               <BtnWrapper className="bottom">
                 <Button onClick={() => setShow(!showAll)}>
                   {showAll ? "Less projects" : "More projects..."}

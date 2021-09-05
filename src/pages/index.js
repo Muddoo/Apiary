@@ -16,7 +16,7 @@ import { createClient } from "contentful";
 // import dynamic from "next/dynamic";
 // const Hero = dynamic(import("../components/Hero/Hero.js"))
 
-export default function Home({ projectss }) {
+export default function Home({ items, projectsMap }) {
   const { menu, setMenu } = useContext(Store);
   const { formVisible, setForm } = useContext(Store);
   const { calloutVisible, setCallout } = useContext(Store);
@@ -24,7 +24,7 @@ export default function Home({ projectss }) {
 
   useEffect(() => setMenu(false), []);
   useEffect(() => setMenu(projects), []);
-  useEffect(() => setProjects(projectss), []);
+  useEffect(() => setProjects(projectsMap), []);
   // useEffect(() => {
   //   (async function data() {
   //     const client = createClient({
@@ -35,7 +35,8 @@ export default function Home({ projectss }) {
   //   })();
   // }, []);
 
-  console.log(projects);
+  // console.log(projects);
+  console.log(projectsMap);
 
   return (
     <div>
@@ -123,7 +124,11 @@ export default function Home({ projectss }) {
           },
         ]}
       />
-      <Projects setForm={setForm} projects={projects} setProjects={setProjects} />
+      <Projects
+        setForm={setForm}
+        projects={projects}
+        setProjects={setProjects}
+      />
       {/* <Footer /> */}
 
       <Form open={formVisible} setForm={setForm} setCallout={setCallout} />
@@ -133,23 +138,25 @@ export default function Home({ projectss }) {
 }
 
 export async function getStaticProps() {
-  // const { projects, setProjects } = useContext(Store);
   const client = createClient({
     space: "zu5ddjasx2dw",
     accessToken: "kBKxaKw3aowDBaCjhU2N9FcKrPGwEUBAVlsM1T4hRLI",
   });
 
-  const enteries = (await client.getEntries()).items[0]
-  const projectss = [];
-
-  for(let i = 0; i<6; i++) {
-    projectss.push(enteries)
-  }
+  const items = (await client.getEntries()).items;
+  const projectsMap = items.reduce((a, { fields, sys }) => {
+    return {
+      ...a,
+      [fields.type]: a[fields.type]
+        ? [...a[fields.type], { ...fields, id: sys.id }]
+        : [{ ...fields, id: sys.id }],
+    };
+  }, {});
 
   return {
     props: {
-      // projects: (await client.getEntries()).items,
-      projectss,
+      items,
+      projectsMap,
     },
   };
 }

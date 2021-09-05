@@ -44,6 +44,16 @@ export const Wrapper = styled.div`
     order: 0;
   }
 
+  &.projects {
+    min-width: auto;
+    max-width: unset;
+    width: 100%;
+    height: min-content;
+    overflow: hidden;
+    gap: 0;
+    order: 0;
+  }
+
   @media screen and (max-width: 1024px) {
     max-width: 452px;
     min-width: 330px;
@@ -113,8 +123,7 @@ export const Text = styled.p`
 
   &.member {
     display: -webkit-box;
-    -webkit-line-clamp: ${props => props.show ? "auto" : 6};
-    /* -webkit-line-clamp: 6; */
+    -webkit-line-clamp: ${(props) => (props.show ? "auto" : 5)};
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -138,10 +147,6 @@ export const Text = styled.p`
   @media screen and (max-width: 768px) {
     font-size: 20px;
     line-height: 30px;
-
-    &.member {
-      -webkit-line-clamp: 9;
-    }
 
     &.medium {
       font-size: 16px;
@@ -176,6 +181,8 @@ export const Img = styled.div`
 `;
 
 export const BtnWrapper = styled.div`
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
@@ -260,13 +267,13 @@ export const ProjectsContainer = styled.div`
   display: block;
   width: 100%;
   overflow-x: hidden;
-  margin-top: ${props => props.i ? "80px" : 0};
+  margin-top: ${(props) => (props.i ? "80px" : 0)};
 
   @media screen and (max-width: 768px) {
     transform: scale(1.045, 1);
     max-width: 470px;
     margin: auto;
-    margin-top: ${props => props.i ? "60px" : 0}
+    margin-top: ${(props) => (props.i ? "60px" : 0)};
   }
 `;
 
@@ -286,7 +293,6 @@ export const List = styled.div`
   left: ${(props) => `${100 * props.index}%`};
   display: grid;
   grid-auto-rows: min-content;
-  height: 100%;
   overflow: hidden;
   gap: 80px;
   width: 100%;
@@ -305,6 +311,40 @@ export const Project = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: min-content;
   width: 100%;
+  height: ${(props) => {
+    if (props.show && props.index) return "100%";
+    if (!props.index) return "100%";
+    return 0;
+  }};
+  transform: ${(props) => {
+    if (props.show && props.index) return "translateY(0)";
+    if (!props.index) return "scale(1)";
+    return "translateY(100vh)";
+  }};
+  overflow: hidden;
+  opacity: ${(props) => {
+    if (props.show && props.index) return 1;
+    if (!props.index) return 1;
+    return 0.6;
+  }};
+  visibility: ${(props) => {
+    if (props.show && props.index) return "visible";
+    if (!props.index) return "visible";
+    return "hidden";
+  }};
+  transition: ${(props) =>
+    props.show
+      ? "all 1s, height 0.1s .1s, margin 0s .1s, transform 1s"
+      : "all 1s, height 0s 0.1s, margin 0s .1s, transform 1s"};
+  margin-bottom: 80px;
+
+  &:nth-of-type(n + 2) {
+    margin-bottom: ${(props) => (props.show ? "80px" : 0)};
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   & > :first-child {
     grid-column: span 2;
@@ -364,6 +404,13 @@ export const Details = styled.div`
     padding: 32px;
     background-color: white;
     gap: 33px;
+    height: ${(props) => (props.show ? "min-content" : "100%")};
+    max-height: ${(props) => (props.show ? "100%" : "360px")};
+    min-height: 360px;
+    grid-template-rows: min-content;
+    & > :nth-child(2) {
+      align-self: start;
+    }
   }
 
   & > :first-child,
@@ -387,6 +434,7 @@ export const Details = styled.div`
     &.member {
       padding: 20px 12px;
       min-height: auto;
+      max-height: 100%;
     }
 
     :nth-of-type(3) {
@@ -404,6 +452,7 @@ export const MemberWraper = styled.div`
   display: flex;
   gap: 24px;
   width: 100%;
+  min-height: 80px;
 
   @media screen and (max-width: 1024px) {
     gap: 16px;
@@ -412,6 +461,7 @@ export const MemberWraper = styled.div`
   @media screen and (max-width: 768px) {
     gap: 12px;
     margin-bottom: 12px;
+    min-height: auto;
   }
 `;
 
@@ -423,7 +473,6 @@ export const MemberImgWrapper = styled.div`
 export const MemberInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 8px;
 
   @media screen and (max-width: 768px) {
@@ -439,7 +488,7 @@ export const MemberImg = styled.div`
   overflow: hidden;
   background-color: #c4c4c4;
   :not(:last-of-type) {
-    margin-left: -11px;
+    margin-left: -14px;
   }
 
   @media screen and (max-width: 1024px) {

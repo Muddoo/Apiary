@@ -6,7 +6,7 @@ export function Store({ children }) {
   const [menu, setMenu] = useState(false);
   const [formVisible, setForm] = useState(false);
   const [calloutVisible, setCallout] = useState(false);
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState({});
 
   return (
     <Root.Provider
