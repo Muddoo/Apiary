@@ -25,18 +25,6 @@ export default function Home({ items, projectsMap }) {
   useEffect(() => setMenu(false), []);
   useEffect(() => setMenu(projects), []);
   useEffect(() => setProjects(projectsMap), []);
-  // useEffect(() => {
-  //   (async function data() {
-  //     const client = createClient({
-  //       space: "zu5ddjasx2dw",
-  //       accessToken: "kBKxaKw3aowDBaCjhU2N9FcKrPGwEUBAVlsM1T4hRLI",
-  //     });
-  //     console.log(await (await client.getEntries()).items);
-  //   })();
-  // }, []);
-
-  // console.log(projects);
-  console.log(projectsMap);
 
   return (
     <div>
@@ -129,7 +117,6 @@ export default function Home({ items, projectsMap }) {
         projects={projects}
         setProjects={setProjects}
       />
-      {/* <Footer /> */}
 
       <Form open={formVisible} setForm={setForm} setCallout={setCallout} />
       <Callout open={calloutVisible} setCallout={setCallout} />
